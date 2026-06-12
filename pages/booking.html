@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Windshield Service // Kinetic Auto Glass</title>
+  <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="antialiased bg-[var(--canvas)] font-body text-[var(--ink-high)] precision-grid-bg min-h-screen flex flex-col items-center justify-center py-24 px-6 gap-8">
+  <div id="app-navbar"></div>
+
+
+  <div class="w-full max-w-xl border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 sm:p-8 shadow-2xl rounded-sm">
+    <div class="mb-6 border-b border-[var(--structural-line)] pb-4">
+      <span class="font-mono text-[10px] text-[var(--laser-amber)] block uppercase">// APPOINTMENT BOOKING PORTAL</span>
+      <h1 class="text-2xl font-black font-display tracking-tight text-[var(--ink-high)] mt-1">Schedule Mobile Service</h1>
+    </div>
+
+    <form class="space-y-4 text-xs font-mono">
+      <div>
+        <label class="block text-[var(--ink-low)] uppercase font-bold mb-2">01 // Vehicle Details (Year, Make, Model)</label>
+        <input type="text" placeholder="e.g., 2024 BMW M4 Competition" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] focus:border-[var(--laser-amber)] text-[var(--ink-high)] px-3 py-3 rounded-sm focus:outline-none" required />
+      </div>
+
+      <div>
+        <label class="block text-[var(--ink-low)] uppercase font-bold mb-2">02 // Insurance Claims Assistance</label>
+        <select class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] focus:border-[var(--laser-amber)] text-[var(--ink-high)] px-3 py-3 rounded-sm focus:outline-none appearance-none" required>
+          <option value="">-- SELECT YOUR INSURANCE OPTION --</option>
+          <option value="geico">GEICO Auto Insurance Claim</option>
+          <option value="progressive">Progressive Auto Insurance Claim</option>
+          <option value="none">Self-Pay / Out of Pocket Payment</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-[var(--ink-low)] uppercase font-bold mb-2">03 // Service Date</label>
+          <input type="date" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] focus:border-[var(--laser-amber)] text-[var(--ink-high)] px-3 py-3 rounded-sm focus:outline-none" required />
+        </div>
+        <div>
+          <label class="block text-[var(--ink-low)] uppercase font-bold mb-2">04 // Preferred Time Window</label>
+          <select class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] focus:border-[var(--laser-amber)] text-[var(--ink-high)] px-3 py-3 rounded-sm focus:outline-none" required>
+            <option>Morning (08:00 AM - 12:00 PM)</option>
+            <option>Afternoon (12:00 PM - 04:00 PM)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <button type="submit" class="w-full machined-button bg-[var(--laser-amber)] text-white font-bold p-4 text-center border-none transition-all block">
+          SUBMIT BOOKING REQUEST &rarr;
+        </button>
+      </div>
+    </form>
+  </div>
+
+  
+    <!-- SECTION: MOBILE SERVICE CAPACITY STATUS -->
+    <section class="w-full max-w-xl mt-8 border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm shadow-xl font-mono text-[10px]">
+      <div class="flex justify-between items-center border-b border-[var(--structural-line)] pb-3 mb-4">
+        <span class="text-[var(--laser-cyan)] font-bold">// MOBILE SERVICE AVAILABILITY TRACKER</span>
+        <span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">LIVE_STATUS_ACTIVE</span>
+      </div>
+      <div class="space-y-3 text-[var(--ink-mid)]">
+        <div class="flex justify-between items-center py-1 border-b border-[var(--structural-line)]/50">
+          <span>AVADI COVERAGE AREA</span>
+          <span class="text-[var(--laser-amber)]">Next-Day Slots Available (~24 Mins response)</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-[var(--structural-line)]/50">
+          <span>SHOLINGANALLUR COVERAGE AREA</span>
+          <span class="text-emerald-500">Same-Day Slots Available (~15 Mins response)</span>
+        </div>
+        <div class="flex justify-between items-center py-1 border-b border-[var(--structural-line)]/50">
+          <span>AMBATTUR COVERAGE AREA</span>
+          <span class="text-[var(--laser-amber)]">Next-Day Slots Available (~35 Mins response)</span>
+        </div>
+        <div class="flex justify-between items-center py-1">
+          <span>T. NAGAR COVERAGE AREA</span>
+          <span class="text-rose-500">Busy (Wait times exceed 60 Mins)</span>
+        </div>
+      </div>
+    </section>
+
+    <script src="../assets/js/layout.js"></script>
+
+  <div id="app-footer"></div>
+</body>
+</html>

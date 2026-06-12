@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinetic Auto Glass // Professional Mobile Windshield Repair & Replacement</title>
+  <link rel="icon" type="image/png" href="./assets/images/brand-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link to your master styling file for variables, fonts, and grid-bg -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="antialiased bg-[var(--canvas)] font-body text-[var(--ink-high)] precision-grid-bg min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 1: NAVIGATION HEADER                                              -->
+  <!-- ========================================================================= -->
+  <div id="app-navbar"></div>
+
+  <main class="w-full">
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: HERO SECTION (SPLIT LAYOUT)                                    -->
+    <!-- ========================================================================= -->
+    <section id="hero" class="relative min-h-[85vh] lg:min-h-[90vh] grid grid-cols-1 lg:grid-cols-12 items-center px-6 lg:px-12 border-b border-[var(--structural-line)] overflow-hidden gap-12 py-16">
+      <div class="lg:col-span-7 space-y-6 z-10 flex flex-col justify-center">
+        <span class="font-mono text-xs text-[var(--laser-cyan)] uppercase tracking-widest block">
+          [ PROMPT MOBILE AUTO GLASS SERVICES ]
+        </span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black tracking-tight leading-none uppercase text-[var(--ink-high)]">
+          Expert Windshield <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ink-high)] via-[var(--laser-cyan)] to-[var(--laser-amber)]">
+            Repair & Replacement
+          </span>
+        </h1>
+        <p class="font-mono text-xs sm:text-sm text-[var(--ink-mid)] max-w-xl leading-relaxed">
+          Chennai's premier mobile auto glass specialists. From rock chip repairs to certified windshield replacements and precision ADAS calibration, we bring dealership-quality service directly to your driveway.
+        </p>
+        
+        <!-- CTA Buttons Group -->
+        <div class="pt-2 flex flex-wrap gap-4 font-mono text-xs">
+          <a href="#dispatch" class="bg-[var(--laser-amber)] text-white hover:bg-amber-600 px-6 py-3.5 font-bold transition-all duration-300 uppercase shadow-[0_0_15px_rgba(217,119,6,0.15)] hover:shadow-[0_0_25px_rgba(217,119,6,0.3)]">
+            Book a Repair
+          </a>
+          <a href="tel:+914428940192" class="border border-[var(--structural-line)] bg-[var(--surface-solid)] text-[var(--ink-high)] px-6 py-3.5 font-bold hover:border-red-500 hover:text-red-500 transition-all duration-300 uppercase">
+            Emergency Service
+          </a>
+        </div>
+
+        <!-- Emergency Phone Hotline Card -->
+        <div class="p-4 border border-[var(--structural-line)] bg-[var(--surface-raised)]/60 backdrop-blur-md flex items-center justify-between gap-4 max-w-md rounded-none relative overflow-hidden group">
+          <div class="absolute inset-y-0 left-0 w-[3px] bg-red-500 group-hover:bg-red-400 transition-colors"></div>
+          <div class="flex items-center space-x-3">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+            <div class="font-mono text-xs">
+              <span class="text-[var(--ink-low)] block uppercase text-[9px] tracking-wider">24/7 Emergency Dispatch</span>
+              <span class="text-[var(--ink-high)] font-bold text-sm">+91 44 2894 0192</span>
+            </div>
+          </div>
+          <a href="tel:+914428940192" class="border border-red-500/30 text-red-500 hover:bg-red-500 hover:text-white px-3.5 py-1.5 text-[10px] font-mono uppercase tracking-wider transition-all duration-300">
+            Call Dispatch
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Panel: Visual frame showcasing generated image inside glassmorphic card -->
+      <div class="lg:col-span-5 relative w-full h-full flex items-center justify-center z-10">
+        <div class="relative w-full max-w-md lg:max-w-none aspect-[4/3] sm:aspect-video lg:aspect-[4/5] border border-[var(--structural-line)] bg-[var(--surface-solid)]/40 p-2 backdrop-blur-sm shadow-[0_20px_50px_rgba(0,0,0,0.1)] group">
+          <!-- Corner brackets -->
+          <div class="absolute -top-[1px] -left-[1px] w-4 h-4 border-t-2 border-l-2 border-[var(--laser-cyan)]"></div>
+          <div class="absolute -top-[1px] -right-[1px] w-4 h-4 border-t-2 border-r-2 border-[var(--laser-cyan)]"></div>
+          <div class="absolute -bottom-[1px] -left-[1px] w-4 h-4 border-b-2 border-l-2 border-[var(--laser-cyan)]"></div>
+          <div class="absolute -bottom-[1px] -right-[1px] w-4 h-4 border-b-2 border-r-2 border-[var(--laser-cyan)]"></div>
+          
+          <div class="relative w-full h-full overflow-hidden border border-[var(--structural-line)] bg-slate-900">
+            <img src="assets/images/hero_windshield.png" alt="Mobile Windshield Repair Technician" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-102 transition-all duration-700 ease-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+            <!-- Real-time HUD stats overlay -->
+            <div class="absolute bottom-4 left-4 right-4 bg-[var(--surface-solid)]/90 backdrop-blur-md border border-[var(--structural-line)] p-3 flex justify-between items-center text-[9px] font-mono uppercase tracking-wider text-[var(--ink-high)]">
+              <div>
+                <span class="text-[var(--laser-cyan)] font-bold block">// DISPATCH_UNIT_09</span>
+                <span>MEMBER_AGSC #54801</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[var(--laser-amber)] font-bold block">SYS_STATUS // ACTIVE</span>
+                <span>LAT: 13.0827 // LON: 80.2707</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 3: WHY CHOOSE KINETIC SECTION                                     -->
+    <!-- ========================================================================= -->
+    <section id="why-choose-us" class="px-6 lg:px-12 py-16 sm:py-24 border-b border-[var(--structural-line)] bg-[var(--surface-raised)]/30">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-[var(--structural-line)] pb-6 gap-4">
+          <div>
+            <span class="font-mono text-[10px] text-[var(--laser-amber)] block uppercase tracking-widest">// KINETIC ADVANTAGE</span>
+            <h2 class="text-2xl sm:text-3xl font-display font-black uppercase mt-1 text-[var(--ink-high)]">Why Choose Kinetic Auto Glass</h2>
+          </div>
+          <p class="font-mono text-xs text-[var(--ink-mid)] max-w-sm">
+            Engineered for absolute convenience, dealership-quality craftsmanship, and guaranteed vehicle structural integrity.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
+          <!-- Certifications -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 space-y-4 hover:border-[var(--laser-cyan)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="text-[var(--laser-cyan)] font-bold block">// 01_CERTIFICATION</span>
+              <h3 class="text-sm font-bold text-[var(--ink-high)] uppercase">AGSC-Certified Techs</h3>
+              <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+                Every installer is fully certified by the Auto Glass Safety Council, adhering strictly to ANSI safety standards for windshield adhesive curing.
+              </p>
+            </div>
+            <span class="text-[var(--ink-low)] text-[9px] block pt-3 border-t border-[var(--structural-line)]/50 mt-4">[ STANDARD_AGSC ]</span>
+          </div>
+
+          <!-- Mobile Convenience -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 space-y-4 hover:border-[var(--laser-cyan)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="text-[var(--laser-cyan)] font-bold block">// 02_CONVENIENCE</span>
+              <h3 class="text-sm font-bold text-[var(--ink-high)] uppercase">On-Site Mobile Van</h3>
+              <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+                We deploy our custom-fitted mobile workshop vehicles directly to your driveway, workplace, or roadside across Chennai with no travel fees.
+              </p>
+            </div>
+            <span class="text-[var(--ink-low)] text-[9px] block pt-3 border-t border-[var(--structural-line)]/50 mt-4">[ TRAVEL_FEE // 0.00 ]</span>
+          </div>
+
+          <!-- Lifetime Warranty -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 space-y-4 hover:border-[var(--laser-cyan)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="text-[var(--laser-cyan)] font-bold block">// 03_WARRANTY</span>
+              <h3 class="text-sm font-bold text-[var(--ink-high)] uppercase">Lifetime Leak Warranty</h3>
+              <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+                All windshield replacements are backed by a comprehensive lifetime warranty covering air leaks, water leaks, and adhesive bond failures.
+              </p>
+            </div>
+            <span class="text-[var(--ink-low)] text-[9px] block pt-3 border-t border-[var(--structural-line)]/50 mt-4">[ WARRANTY_LOCKED ]</span>
+          </div>
+
+          <!-- Same-Day Service -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 space-y-4 hover:border-[var(--laser-amber)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="text-[var(--laser-amber)] font-bold block">// 04_EFFICIENCY</span>
+              <h3 class="text-sm font-bold text-[var(--ink-high)] uppercase">45-Min Safe Drive-Away</h3>
+              <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+                We use top-tier fast-curing polyurethane adhesives. Your vehicle is safe to drive away just 45 minutes after the installation is complete.
+              </p>
+            </div>
+            <span class="text-[var(--laser-amber)] text-[9px] block pt-3 border-t border-[var(--structural-line)]/50 mt-4">[ SDAT_45_MIN ]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 4: CORE SERVICES TAB/GRID                                         -->
+    <!-- ========================================================================= -->
+    <section id="services" class="px-6 lg:px-12 py-16 sm:py-24 border-b border-[var(--structural-line)] space-y-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-[var(--structural-line)] pb-6 gap-4">
+        <div>
+          <span class="font-mono text-[10px] text-[var(--laser-cyan)] block uppercase tracking-widest">// SIGNATURE AUTO GLASS SOLUTIONS</span>
+          <h2 class="text-2xl sm:text-3xl font-display font-black uppercase mt-1 text-[var(--ink-high)]">Our Certified Services</h2>
+        </div>
+        <p class="font-mono text-xs text-[var(--ink-mid)] max-w-sm">
+          We combine certified technicians, premium materials, and advanced calibration systems to deliver safe auto glass services.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Service 1: Replacement -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] group overflow-hidden flex flex-col justify-between hover:border-[var(--laser-cyan)] transition-all duration-300">
+          <div class="relative w-full aspect-[16/10] overflow-hidden border-b border-[var(--structural-line)] bg-slate-900">
+            <img src="assets/images/glass_replacement.png" alt="Windshield replacement process" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-103 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
+          </div>
+          <div class="p-6 space-y-3 flex-grow">
+            <span class="font-mono text-[9px] text-[var(--laser-cyan)] font-bold block">// SERVICE_01 // GLASS REPLACEMENT</span>
+            <h3 class="text-xl font-bold font-display uppercase tracking-tight text-[var(--ink-high)]">Windshield Replacement</h3>
+            <p class="font-mono text-xs text-[var(--ink-mid)] leading-relaxed">
+              Complete on-site windshield installations using OEM or OEM-equivalent glass. Adheres to strict federal safety standards and uses premium fast-curing polyurethane sealants for a quick safe drive-away time.
+            </p>
+          </div>
+          <div class="p-6 pt-0 font-mono text-[10px] flex justify-between items-center border-t border-[var(--structural-line)]/50 mt-4">
+            <a href="pages/service1.html" class="text-[var(--laser-amber)] hover:text-amber-500 font-bold uppercase transition-colors">Service Details &rarr;</a>
+            <span class="text-[var(--ink-low)]">Est: 60 Mins</span>
+          </div>
+        </div>
+
+        <!-- Service 2: Chip & Crack Repair -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] group overflow-hidden flex flex-col justify-between hover:border-[var(--laser-cyan)] transition-all duration-300">
+          <div class="relative w-full aspect-[16/10] overflow-hidden border-b border-[var(--structural-line)] bg-slate-900">
+            <img src="assets/images/chip_repair.png" alt="Windshield chip repair with resin injection tool" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-103 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
+          </div>
+          <div class="p-6 space-y-3 flex-grow">
+            <span class="font-mono text-[9px] text-[var(--laser-cyan)] font-bold block">// SERVICE_02 // CHIP & CRACK REPAIR</span>
+            <h3 class="text-xl font-bold font-display uppercase tracking-tight text-[var(--ink-high)]">Chip & Crack Repair</h3>
+            <p class="font-mono text-xs text-[var(--ink-mid)] leading-relaxed">
+              Stop windshield damage from spreading. We vacuum air out of rock chips and bulls-eyes, then inject high-grade optical resin that cures under UV light to restore structural stability and 95% optical clarity.
+            </p>
+          </div>
+          <div class="p-6 pt-0 font-mono text-[10px] flex justify-between items-center border-t border-[var(--structural-line)]/50 mt-4">
+            <a href="pages/service2.html" class="text-[var(--laser-amber)] hover:text-amber-500 font-bold uppercase transition-colors">Service Details &rarr;</a>
+            <span class="text-[var(--ink-low)]">Est: 30 Mins</span>
+          </div>
+        </div>
+
+        <!-- Service 3: ADAS Calibration -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] group overflow-hidden flex flex-col justify-between hover:border-[var(--laser-cyan)] transition-all duration-300">
+          <div class="relative w-full aspect-[16/10] overflow-hidden border-b border-[var(--structural-line)] bg-slate-900">
+            <img src="assets/images/adas_calibration.png" alt="ADAS safety camera calibration" class="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-103 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
+          </div>
+          <div class="p-6 space-y-3 flex-grow">
+            <span class="font-mono text-[9px] text-[var(--laser-amber)] font-bold block">// SERVICE_03 // ADAS CALIBRATION</span>
+            <h3 class="text-xl font-bold font-display uppercase tracking-tight text-[var(--ink-high)]">On-Site ADAS Calibration</h3>
+            <p class="font-mono text-xs text-[var(--ink-mid)] leading-relaxed">
+              Windshield replacement shifts the forward camera arrays slightly. We perform certified static and dynamic recalibrations of safety camera systems (lane keep assist, collision avoidance) to ensure factory specs.
+            </p>
+          </div>
+          <div class="p-6 pt-0 font-mono text-[10px] flex justify-between items-center border-t border-[var(--structural-line)]/50 mt-4">
+            <a href="pages/service3.html" class="text-[var(--laser-amber)] hover:text-amber-500 font-bold uppercase transition-colors">Service Details &rarr;</a>
+            <span class="text-[var(--ink-low)]">Est: 45 Mins</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 5: INSURANCE CLAIM SUPPORT                                        -->
+    <!-- ========================================================================= -->
+    <section id="insurance" class="px-6 lg:px-12 py-16 sm:py-24 border-b border-[var(--structural-line)] bg-[var(--surface-solid)] relative overflow-hidden">
+      <!-- Glowing subtle gradient in background -->
+      <div class="absolute -right-48 -bottom-48 w-96 h-96 bg-[var(--laser-cyan)]/5 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <span class="font-mono text-[10px] text-[var(--laser-cyan)] block uppercase tracking-widest">// INSURANCE CLAIMS SYNC</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-black uppercase leading-tight text-[var(--ink-high)]">
+            Zero Out-Of-Pocket Cost<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--laser-cyan)] to-[var(--laser-amber)]">
+              With Direct Insurance Sync
+            </span>
+          </h2>
+          <p class="font-mono text-xs sm:text-sm text-[var(--ink-mid)] leading-relaxed max-w-2xl">
+            In many cases, comprehensive insurance policies cover windshield chip repairs with **zero deductible**, costing you nothing out of pocket. We coordinate directly with all major insurance providers to handle the paperwork, file the claim, and bill them directly.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 font-mono text-[11px]">
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--surface-raised)]/50">
+              <span class="text-[var(--laser-amber)] font-bold block">// 01 / CALL US FIRST</span>
+              <span class="text-[var(--ink-mid)] mt-1 block">We gather your policy info and file the claim on your behalf.</span>
+            </div>
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--surface-raised)]/50">
+              <span class="text-[var(--laser-cyan)] font-bold block">// 02 / ZERO PAPERWORK</span>
+              <span class="text-[var(--ink-mid)] mt-1 block">We submit documentation, damage photos, and calibration audits.</span>
+            </div>
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--surface-raised)]/50">
+              <span class="text-[var(--laser-amber)] font-bold block">// 03 / DIRECT BILLING</span>
+              <span class="text-[var(--ink-mid)] mt-1 block">The carrier pays us directly. You pay nothing if deductible is covered.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-5 p-8 border border-[var(--structural-line)] bg-[var(--surface-metal)] text-slate-200 space-y-6 relative group overflow-hidden">
+          <!-- Glow top line -->
+          <div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-cyan-500 to-amber-500"></div>
+          
+          <h3 class="font-display font-bold uppercase text-lg text-white tracking-tight">// CARRIER COMPATIBILITY MATRIX</h3>
+          <p class="font-mono text-[10px] text-slate-400">
+            Our digital claims system is synchronized with top national insurance providers for instant authorization:
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 font-mono text-[11px] font-bold text-slate-300">
+            <div class="flex items-center space-x-2 p-2 bg-slate-800/40 border border-slate-700/50">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+              <span>GEICO SYNC</span>
+            </div>
+            <div class="flex items-center space-x-2 p-2 bg-slate-800/40 border border-slate-700/50">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+              <span>PROGRESSIVE</span>
+            </div>
+            <div class="flex items-center space-x-2 p-2 bg-slate-800/40 border border-slate-700/50">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+              <span>STATE FARM</span>
+            </div>
+            <div class="flex items-center space-x-2 p-2 bg-slate-800/40 border border-slate-700/50">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+              <span>ALLSTATE</span>
+            </div>
+            <div class="flex items-center space-x-2 p-2 bg-slate-800/40 border border-slate-700/50">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+              <span>LIBERTY MUTUAL</span>
+            </div>
+            <div class="flex items-center space-x-2 p-2 bg-slate-800/40 border border-slate-700/50">
+              <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+              <span>NATIONWIDE</span>
+            </div>
+          </div>
+          
+          <div class="pt-2 border-t border-slate-800/50 flex justify-between items-center text-[10px] font-mono text-slate-400">
+            <span>API_AUTHORIZATION // OK</span>
+            <span class="text-cyan-400 font-bold">100% PAPERLESS READY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 6: HOW IT WORKS TIMELINE                                          -->
+    <!-- ========================================================================= -->
+    <section id="how-it-works" class="px-6 lg:px-12 py-16 sm:py-24 border-b border-[var(--structural-line)] bg-[var(--surface-raised)]/30 space-y-12">
+      <div class="text-center space-y-2 max-w-2xl mx-auto">
+        <span class="font-mono text-[10px] text-[var(--laser-amber)] block uppercase tracking-widest">// PROCESS PIPELINE</span>
+        <h2 class="text-2xl sm:text-3xl font-display font-black uppercase text-[var(--ink-high)]">How Our Service Works</h2>
+        <p class="font-mono text-xs text-[var(--ink-mid)]">
+          From initial booking request to final drive-away clearance: our automated precision service workflow.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 relative font-mono text-xs mt-12">
+        <!-- Connecting line for desktop (hidden on mobile) -->
+        <div class="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-[1px] bg-[var(--structural-line)] z-0"></div>
+        
+        <!-- Step 1 -->
+        <div class="space-y-4 text-center md:text-left relative z-10 group">
+          <div class="mx-auto md:mx-0 w-12 h-12 rounded-none bg-[var(--surface-solid)] border border-[var(--structural-line)] flex items-center justify-center font-bold text-sm text-[var(--laser-cyan)] shadow-sm group-hover:border-[var(--laser-cyan)] transition-colors">
+            01
+          </div>
+          <div>
+            <h4 class="text-[var(--ink-high)] font-bold uppercase mb-1">Request a Quote</h4>
+            <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+              Provide your vehicle details, damage description, and insurance info online or by phone.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="space-y-4 text-center md:text-left relative z-10 group">
+          <div class="mx-auto md:mx-0 w-12 h-12 rounded-none bg-[var(--surface-solid)] border border-[var(--structural-line)] flex items-center justify-center font-bold text-sm text-[var(--ink-high)] shadow-sm group-hover:border-[var(--laser-cyan)] transition-colors">
+            02
+          </div>
+          <div>
+            <h4 class="text-[var(--ink-high)] font-bold uppercase mb-1">Mobile Workshop Dispatches</h4>
+            <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+              Our custom-equipped mobile workshop van drives directly to your driveway, home, or workplace.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="space-y-4 text-center md:text-left relative z-10 group">
+          <div class="mx-auto md:mx-0 w-12 h-12 rounded-none bg-[var(--surface-solid)] border border-[var(--structural-line)] flex items-center justify-center font-bold text-sm text-[var(--ink-high)] shadow-sm group-hover:border-[var(--laser-cyan)] transition-colors">
+            03
+          </div>
+          <div>
+            <h4 class="text-[var(--ink-high)] font-bold uppercase mb-1">Precision Repair</h4>
+            <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+              Our certified technicians perform chip repairs or replacement under factory glass safety specifications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="space-y-4 text-center md:text-left relative z-10 group">
+          <div class="mx-auto md:mx-0 w-12 h-12 rounded-none bg-[var(--surface-solid)] border border-[var(--laser-amber)] flex items-center justify-center font-bold text-sm text-[var(--laser-amber)] shadow-sm group-hover:border-[var(--laser-amber)] transition-colors">
+            04
+          </div>
+          <div>
+            <h4 class="text-[var(--ink-high)] font-bold uppercase mb-1">ADAS Calibration & Drive</h4>
+            <p class="text-[var(--ink-mid)] leading-relaxed text-[11px]">
+              We recalibrate forward safety cameras, perform safety checks, and clear you to drive after cure time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 7: SERVICE COVERAGE AREAS                                         -->
+    <!-- ========================================================================= -->
+    <section id="coverage" class="px-6 lg:px-12 py-16 sm:py-24 border-b border-[var(--structural-line)] bg-[var(--surface-solid)]">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-[var(--structural-line)] pb-6 gap-4">
+          <div>
+            <span class="font-mono text-[10px] text-[var(--laser-cyan)] block uppercase tracking-widest">// MOBILE SERVICE RADIUS</span>
+            <h2 class="text-2xl sm:text-3xl font-display font-black uppercase mt-1 text-[var(--ink-high)]">Chennai Service Coverage Zones</h2>
+          </div>
+          <p class="font-mono text-xs text-[var(--ink-mid)] max-w-sm">
+            We deploy mobile workshops directly to these primary hubs and surrounding neighborhoods, offering rapid on-site arrivals.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
+          <!-- Zone 1 -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-raised)]/50 p-5 space-y-4 hover:border-[var(--laser-cyan)] transition-colors">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-[var(--ink-high)] text-sm">Avadi Zone</span>
+              <span class="bg-emerald-500/10 text-emerald-500 px-2 py-0.5 text-[9px] uppercase font-bold tracking-wider">Active</span>
+            </div>
+            <div class="space-y-2 border-t border-[var(--structural-line)] pt-3 text-[11px] text-[var(--ink-mid)]">
+              <div class="flex justify-between">
+                <span>Response Time:</span>
+                <span class="text-[var(--ink-high)] font-bold">Under 90 Mins</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Today's Slots:</span>
+                <span class="text-emerald-500 font-bold">3 Open</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Primary Dispatch:</span>
+                <span class="text-[var(--ink-high)]">Avadi Station Rd</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone 2 -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-raised)]/50 p-5 space-y-4 hover:border-[var(--laser-cyan)] transition-colors">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-[var(--ink-high)] text-sm">Sholinganallur</span>
+              <span class="bg-emerald-500/10 text-emerald-500 px-2 py-0.5 text-[9px] uppercase font-bold tracking-wider">Active</span>
+            </div>
+            <div class="space-y-2 border-t border-[var(--structural-line)] pt-3 text-[11px] text-[var(--ink-mid)]">
+              <div class="flex justify-between">
+                <span>Response Time:</span>
+                <span class="text-[var(--ink-high)] font-bold">Under 75 Mins</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Today's Slots:</span>
+                <span class="text-[var(--laser-amber)] font-bold">1 Open</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Primary Dispatch:</span>
+                <span class="text-[var(--ink-high)]">OMR Tech Corridor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone 3 -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-raised)]/50 p-5 space-y-4 hover:border-[var(--laser-cyan)] transition-colors">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-[var(--ink-high)] text-sm">Ambattur Zone</span>
+              <span class="bg-emerald-500/10 text-emerald-500 px-2 py-0.5 text-[9px] uppercase font-bold tracking-wider">Active</span>
+            </div>
+            <div class="space-y-2 border-t border-[var(--structural-line)] pt-3 text-[11px] text-[var(--ink-mid)]">
+              <div class="flex justify-between">
+                <span>Response Time:</span>
+                <span class="text-[var(--ink-high)] font-bold">Under 60 Mins</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Today's Slots:</span>
+                <span class="text-emerald-500 font-bold">4 Open</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Primary Dispatch:</span>
+                <span class="text-[var(--ink-high)]">Industrial Estate Rd</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zone 4 -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-raised)]/50 p-5 space-y-4 hover:border-[var(--laser-cyan)] transition-colors">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-[var(--ink-high)] text-sm">T. Nagar Zone</span>
+              <span class="bg-emerald-500/10 text-emerald-500 px-2 py-0.5 text-[9px] uppercase font-bold tracking-wider">Active</span>
+            </div>
+            <div class="space-y-2 border-t border-[var(--structural-line)] pt-3 text-[11px] text-[var(--ink-mid)]">
+              <div class="flex justify-between">
+                <span>Response Time:</span>
+                <span class="text-[var(--ink-high)] font-bold">Under 45 Mins</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Today's Slots:</span>
+                <span class="text-red-500 font-bold">Fully Booked</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Primary Dispatch:</span>
+                <span class="text-[var(--ink-high)]">G.N. Chetty Road</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 8: BOOKING REQUEST FORM                                           -->
+    <!-- ========================================================================= -->
+    <section id="dispatch" class="px-6 lg:px-12 py-16 sm:py-24 border-b border-[var(--structural-line)] max-w-3xl mx-auto space-y-8">
+      <div class="text-center space-y-2">
+        <span class="font-mono text-[10px] text-[var(--laser-cyan)] block uppercase tracking-widest">// BOOKING APPLICATION</span>
+        <h2 class="text-2xl font-display font-black uppercase text-[var(--ink-high)]">Schedule Your Mobile Service</h2>
+        <p class="font-mono text-xs text-[var(--ink-mid)]">Input your contact and vehicle details below to request a prompt service appointment.</p>
+      </div>
+
+      <form class="space-y-4 font-mono text-xs" onsubmit="event.preventDefault();">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[var(--ink-mid)] block uppercase text-[10px] tracking-wider">Your Name</label>
+            <input type="text" placeholder="e.g., Sundaramoorthy" class="w-full bg-[var(--surface-solid)] border border-[var(--structural-line)] p-3 text-[var(--ink-high)] focus:outline-none focus:border-[var(--laser-cyan)] rounded-none">
+          </div>
+          <div class="space-y-1">
+            <label class="text-[var(--ink-mid)] block uppercase text-[10px] tracking-wider">Email Address</label>
+            <input type="email" placeholder="customer@email.com" class="w-full bg-[var(--surface-solid)] border border-[var(--structural-line)] p-3 text-[var(--ink-high)] focus:outline-none focus:border-[var(--laser-cyan)] rounded-none">
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[var(--ink-mid)] block uppercase text-[10px] tracking-wider">Vehicle Details (Year, Make, Model)</label>
+            <input type="text" placeholder="e.g., 2024 Honda Civic Sedan" class="w-full bg-[var(--surface-solid)] border border-[var(--structural-line)] p-3 text-[var(--ink-high)] focus:outline-none focus:border-[var(--laser-cyan)] rounded-none">
+          </div>
+          <div class="space-y-1">
+            <label class="text-[var(--ink-mid)] block uppercase text-[10px] tracking-wider">Service Coverage Zone</label>
+            <div class="relative">
+              <select class="w-full bg-[var(--surface-solid)] border border-[var(--structural-line)] p-3 text-[var(--ink-high)] focus:outline-none focus:border-[var(--laser-cyan)] rounded-none appearance-none pr-8">
+                <option>Avadi Area</option>
+                <option>Sholinganallur Area</option>
+                <option>Ambattur Area</option>
+                <option>T. Nagar Area</option>
+                <option>Other Chennai Area</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-[var(--ink-mid)]">
+                &darr;
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="text-[var(--ink-mid)] block uppercase text-[10px] tracking-wider">Describe Glass Damage & Safety Sensors</label>
+          <textarea rows="3" placeholder="Describe damage (e.g. chip size, crack length) and if your vehicle has lane-keep camera sensors..." class="w-full bg-[var(--surface-solid)] border border-[var(--structural-line)] p-3 text-[var(--ink-high)] focus:outline-none focus:border-[var(--laser-cyan)] rounded-none resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-[var(--laser-amber)] text-white font-bold py-4 hover:bg-amber-500 transition-colors uppercase tracking-widest shadow-[0_0_15px_rgba(217,119,6,0.1)] hover:shadow-[0_0_25px_rgba(217,119,6,0.25)]">
+          Submit Booking Request &rarr;
+        </button>
+      </form>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 9: CLIENT FEEDBACK (TESTIMONIALS)                                 -->
+    <!-- ========================================================================= -->
+    <section id="testimonials" class="py-16 sm:py-24 border-b border-[var(--structural-line)] bg-[var(--surface-raised)] font-mono text-xs">
+      <div class="max-w-7xl mx-auto px-6 space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-[var(--structural-line)] pb-6 gap-4">
+          <div>
+            <span class="text-[var(--laser-cyan)] block uppercase tracking-widest">// CUSTOMER REVIEWS</span>
+            <h2 class="text-2xl sm:text-3xl font-display font-black uppercase mt-1 text-[var(--ink-high)]">What Our Customers Say</h2>
+          </div>
+          <p class="text-[var(--ink-mid)] max-w-sm">
+            Read verified reviews from local car owners and commercial fleet managers who experienced our mobile auto glass services.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 space-y-4 hover:border-[var(--laser-cyan)] transition-colors flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center text-[10px] text-[var(--ink-low)]">
+                <span>ORDER_REF // #FB-8902</span>
+                <span class="text-emerald-500 font-bold uppercase tracking-wider">// CALIBRATION_PASS</span>
+              </div>
+              <p class="text-[var(--ink-mid)] leading-relaxed italic text-[11px]">
+                "The ADAS camera calibration team restored my Audi A6's lane assist system back to factory specs within 35 minutes of installing the new windshield. Outstanding work!"
+              </p>
+            </div>
+            <div class="border-t border-[var(--structural-line)]/50 pt-3 flex justify-between items-center text-[10px] mt-4">
+              <span class="font-bold text-[var(--ink-high)]">A. Sundaram (Fleet Manager)</span>
+              <span class="text-[var(--ink-low)]">Avadi Area</span>
+            </div>
+          </div>
+          
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 space-y-4 hover:border-[var(--laser-amber)] transition-colors flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center text-[10px] text-[var(--ink-low)]">
+                <span>ORDER_REF // #FB-7294</span>
+                <span class="text-emerald-500 font-bold uppercase tracking-wider">// DRIVE_READY</span>
+              </div>
+              <p class="text-[var(--ink-mid)] leading-relaxed italic text-[11px]">
+                "Very pleased with the mobile service. The technician came to my workplace, replaced my windshield, and explained the 45-minute safe drive-away time. Direct insurance billing made it so easy."
+              </p>
+            </div>
+            <div class="border-t border-[var(--structural-line)]/50 pt-3 flex justify-between items-center text-[10px] mt-4">
+              <span class="font-bold text-[var(--ink-high)]">M. Priya (Model Y Owner)</span>
+              <span class="text-[var(--ink-low)]">Sholinganallur Area</span>
+            </div>
+          </div>
+          
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 space-y-4 hover:border-[var(--laser-cyan)] transition-colors flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex justify-between items-center text-[10px] text-[var(--ink-low)]">
+                <span>ORDER_REF // #FB-1904</span>
+                <span class="text-emerald-500 font-bold uppercase tracking-wider">// WARRANTY_LOCKED</span>
+              </div>
+              <p class="text-[var(--ink-mid)] leading-relaxed italic text-[11px]">
+                "The insurance paperwork was handled completely behind the scenes. My out-of-pocket cost was zero. The new windshield looks perfect and matches my original HUD."
+              </p>
+            </div>
+            <div class="border-t border-[var(--structural-line)]/50 pt-3 flex justify-between items-center text-[10px] mt-4">
+              <span class="font-bold text-[var(--ink-high)]">R. Karthik (Logistics Sup.)</span>
+              <span class="text-[var(--ink-low)]">Ambattur Area</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SECTION 7: FOOTER                                                         -->
+  <!-- ========================================================================= -->
+  <div id="app-footer"></div>
+
+  <script src="assets/js/layout.js"></script>
+</body>
+</html>

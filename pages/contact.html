@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Kinetic Auto Glass // Mobile Service Dispatch</title>
+  <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="antialiased bg-[var(--canvas)] font-body text-[var(--ink-high)] precision-grid-bg">
+
+  <div id="app-navbar"></div>
+
+  <main class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <!-- SECTION 01: CONTACT FORM -->
+    <section class="lg:col-span-7 border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 sm:p-8 rounded-sm shadow-2xl">
+      <div class="mb-6">
+        <span class="font-mono text-[10px] text-[var(--laser-amber)] block uppercase">// CONTACT US</span>
+        <h1 class="text-2xl font-black font-display tracking-tight text-[var(--ink-high)] mt-1">Get in Touch</h1>
+      </div>
+
+      <form id="contact-form" class="space-y-4 font-mono text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-[var(--ink-low)] mb-1 uppercase font-bold">Your Name</label>
+            <input id="contact-name" type="text" placeholder="e.g., Sundar" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] text-[var(--ink-high)] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[var(--laser-amber)]" />
+          </div>
+          <div>
+            <label class="block text-[var(--ink-low)] mb-1 uppercase font-bold">Email Address</label>
+            <input id="contact-email" type="email" placeholder="customer@email.com" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] text-[var(--ink-high)] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[var(--laser-amber)]" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-[var(--ink-low)] mb-1 uppercase font-bold">Your Message</label>
+          <textarea id="contact-message" rows="4" placeholder="Describe your vehicle glass damage or fleet coordination needs..." class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] text-[var(--ink-high)] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[var(--laser-amber)]"></textarea>
+        </div>
+
+        <!-- Feedback message banner -->
+        <div id="contact-feedback" class="hidden text-xs font-mono px-4 py-3 border rounded-sm"></div>
+
+        <button type="submit" class="w-full machined-button bg-[var(--laser-amber)] text-white font-bold py-3 text-center border-none">
+          Send Message &rarr;
+        </button>
+      </form>
+    </section>
+
+    <!-- RIGHT SPLIT STRUCTURE -->
+    <div class="lg:col-span-5 space-y-6">
+      <!-- SECTION 02: REGIONAL COVERAGE MAP -->
+      <section class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm space-y-3 font-mono text-xs">
+        <div class="text-[var(--laser-cyan)] font-bold">// OUR MOBILE SERVICE FLEET</div>
+        <div class="h-48 bg-[var(--canvas)] border border-[var(--structural-line)] relative overflow-hidden">
+          <img src="../assets/images/contact_hero.png" class="absolute inset-0 w-full h-full object-cover object-center opacity-80" alt="Mobile service van">
+          <div class="absolute inset-0 bg-gradient-to-t from-[var(--surface-solid)] to-transparent opacity-60"></div>
+          <span class="absolute bottom-4 left-4 z-10 text-[var(--surface-solid)] bg-[var(--ink-high)] px-3 py-1 font-bold">Ready for Dispatch</span>
+        </div>
+      </section>
+
+      <!-- SECTION 03: CONTACT INFO -->
+      <section class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm space-y-4 font-mono text-xs">
+        <div class="text-[var(--ink-high)] font-bold uppercase tracking-wider">// Direct Contact Info</div>
+        <div class="space-y-2 text-[var(--ink-mid)]">
+          <div class="flex justify-between"><span class="text-[var(--ink-low)]">Phone:</span> <span class="text-[var(--ink-high)] font-medium">+91 44 2894 0192</span></div>
+          <div class="flex justify-between"><span class="text-[var(--ink-low)]">Email:</span> <span class="text-[var(--ink-high)] font-medium">info@kineticautoglass.com</span></div>
+          <div class="flex justify-between"><span class="text-[var(--ink-low)]">Service Center:</span> <span class="text-[var(--ink-high)] font-medium">Avadi Industrial Area, Chennai</span></div>
+        </div>
+      </section>
+    </div>
+  
+  
+    <!-- SECTION: REGIONAL SERVICE COVERAGE ZONES -->
+    <section class="lg:col-span-12 border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm font-mono text-xs mt-8 w-full">
+      <div class="border-b border-[var(--structural-line)] pb-3 mb-4">
+        <span class="text-[var(--laser-cyan)] font-bold">// REGIONAL SERVICE COVERAGE ZONES</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 text-[var(--ink-mid)]">
+        <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] space-y-2">
+          <div class="text-[var(--ink-high)] font-bold">// AVADI HUB</div>
+          <div>Location: <span class="text-white">Chennai West Area</span></div>
+          <div>Mobile Units: <span class="text-white">04 active vans</span></div>
+          <div>Avg Dispatch: <span class="text-emerald-500">Fast (&lt; 30 min)</span></div>
+        </div>
+        <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] space-y-2">
+          <div class="text-[var(--ink-high)] font-bold">// SHOLINGANALLUR HUB</div>
+          <div>Location: <span class="text-white">Chennai South Area</span></div>
+          <div>Mobile Units: <span class="text-white">06 active vans</span></div>
+          <div>Avg Dispatch: <span class="text-emerald-500">Fast (&lt; 30 min)</span></div>
+        </div>
+        <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] space-y-2">
+          <div class="text-[var(--ink-high)] font-bold">// AMBATTUR HUB</div>
+          <div>Location: <span class="text-white">Chennai North Area</span></div>
+          <div>Mobile Units: <span class="text-white">03 active vans</span></div>
+          <div>Avg Dispatch: <span class="text-emerald-500">Fast (&lt; 35 min)</span></div>
+        </div>
+        <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] space-y-2">
+          <div class="text-[var(--ink-high)] font-bold">// T. NAGAR HUB</div>
+          <div>Location: <span class="text-white">Central Chennai Area</span></div>
+          <div>Mobile Units: <span class="text-white">05 active vans</span></div>
+          <div>Avg Dispatch: <span class="text-[var(--laser-amber)]">Moderate (Busy)</span></div>
+        </div>
+      </div>
+    </section>
+    </main>
+  <div id="app-footer"></div>
+
+
+
+  <script src="../assets/js/layout.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name    = document.getElementById('contact-name').value.trim();
+      const email   = document.getElementById('contact-email').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      const feedback = document.getElementById('contact-feedback');
+
+      // Reset state
+      feedback.className = 'hidden text-xs font-mono px-4 py-3 border rounded-sm';
+      feedback.textContent = '';
+
+      // Validation
+      if (!name || !email || !message) {
+        feedback.textContent = '⚠ Please fill in all required fields before submitting.';
+        feedback.classList.remove('hidden');
+        feedback.classList.add('border-[var(--laser-amber)]', 'bg-[var(--laser-amber)]/5', 'text-[var(--laser-amber)]');
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        feedback.textContent = '⚠ Please enter a valid email address.';
+        feedback.classList.remove('hidden');
+        feedback.classList.add('border-[var(--laser-amber)]', 'bg-[var(--laser-amber)]/5', 'text-[var(--laser-amber)]');
+        return;
+      }
+
+      // Success
+      feedback.textContent = '✓ Thank you. Your message has been received. We will contact you shortly.';
+      feedback.classList.remove('hidden');
+      feedback.classList.add('border-emerald-500/40', 'bg-emerald-500/5', 'text-emerald-500');
+
+      // Reset form fields
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-email').value = '';
+      document.getElementById('contact-message').value = '';
+
+      // Auto-hide after 6 seconds
+      setTimeout(() => { feedback.classList.add('hidden'); }, 6000);
+    });
+  </script>
+</body>
+</html>

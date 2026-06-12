@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinetic Admin // Dispatch Hub & Order Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="antialiased bg-[var(--canvas)] font-body text-[var(--ink-high)] precision-grid-bg">
+
+  <div class="flex min-h-screen">
+    <!-- Sidebar Control Rail (Left Sidebar) -->
+    <aside class="w-64 border-r border-[var(--structural-line)] bg-[var(--surface-solid)] flex flex-col z-10">
+      <div class="h-16 flex items-center justify-between px-6 border-b border-[var(--structural-line)] bg-[var(--surface-metal)]/50">
+        <span class="font-display font-black text-sm tracking-wider uppercase text-[var(--ink-high)]">KINETIC ADMIN</span>
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]"></span>
+      </div>
+      <nav class="flex-grow p-4 space-y-1 font-mono text-[11px] uppercase tracking-wider text-[var(--ink-mid)]">
+        <a href="#" onclick="switchTab('queue')" id="nav-queue" class="flex items-center gap-3 px-3 py-2 bg-[var(--surface-raised)] text-[var(--laser-amber)] border-l-2 border-[var(--laser-amber)] transition-all">Appointments List</a>
+        <a href="#" onclick="switchTab('telemetry')" id="nav-telemetry" class="flex items-center gap-3 px-3 py-2 hover:bg-[var(--surface-raised)] hover:text-[var(--laser-cyan)] border-l-2 border-transparent transition-all">Service Area Hubs</a>
+        <a href="#" onclick="switchTab('sla')" id="nav-sla" class="flex items-center gap-3 px-3 py-2 hover:bg-[var(--surface-raised)] hover:text-[var(--laser-cyan)] border-l-2 border-transparent transition-all">Insurance Partners</a>
+      </nav>
+      <div class="p-4 border-t border-[var(--structural-line)] text-[9px] font-mono text-[var(--ink-low)] space-y-1 bg-[var(--canvas)]/40">
+        <div>DISPATCH CONSOLE: ACTIVE</div>
+        <div>SERVICE STATUS: OK</div>
+      </div>
+    </aside>
+
+    <!-- Content Workspace -->
+    <main class="flex-grow flex flex-col">
+      <header class="sticky top-0 z-50 w-full border-b border-[var(--structural-line)] bg-[var(--canvas)]/80 backdrop-blur-md px-6 lg:px-12 py-4 flex items-center justify-between gap-4">
+     
+        <a href="../index.html" class="font-display font-black tracking-widest text-lg uppercase hover:text-[var(--laser-cyan)] transition-colors flex flex-row items-center"><img src="../assets/images/brand-logo.png" class="w-16 h-auto -ml-4" alt="Logo">KINETIC AUTO GLASS</a>
+
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <a href="booking.html" class="border border-[var(--laser-amber)] px-4 py-2 text-[var(--laser-amber)] hover:bg-[var(--laser-amber)]/10 transition-all rounded-none uppercase hidden sm:inline-flex">
+            Book Mobile Service
+          </a>
+
+          <!-- Profile Avatar with Dropdown -->
+          <div class="relative group">
+            <button id="admin-profile-btn" aria-label="Account Menu" class="w-9 h-9 border border-[var(--structural-line)] bg-[var(--surface-solid)] hover:border-[var(--laser-cyan)] text-[var(--ink-mid)] hover:text-[var(--laser-cyan)] transition-colors flex items-center justify-center rounded-none">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            </button>
+            <!-- Dropdown -->
+            <div class="absolute ltr:right-0 rtl:left-0 mt-2 w-48 bg-[var(--surface-solid)] border border-[var(--structural-line)] shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 origin-top-right z-50">
+              <div class="py-2 flex flex-col text-[11px] font-mono">
+                <div class="px-4 py-2 border-b border-[var(--structural-line)] text-[var(--laser-cyan)] font-bold tracking-widest uppercase text-[9px]">ADMIN PANEL</div>
+                <a href="#" class="px-4 py-2.5 flex items-center gap-2 text-[var(--ink-mid)] hover:bg-[var(--surface-raised)] hover:text-[var(--laser-cyan)] transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                  My Profile
+                </a>
+                <a href="login-register.html" class="px-4 py-2.5 flex items-center gap-2 text-rose-500 hover:bg-rose-500/10 hover:text-rose-400 transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                  Logout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN TAB: Queue Monitor -->
+      <div id="tab-content-queue" class="p-8 space-y-6 flex-grow transition-opacity duration-300">
+        
+        <!-- Live Operations Metrics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm hover:border-[var(--laser-amber)] transition-colors">
+            <span class="font-mono text-[10px] text-[var(--ink-low)] block">ACTIVE_BOOKINGS</span>
+            <span id="metric-pending-count" class="text-2xl font-tech font-bold block mt-1 text-[var(--laser-amber)]">14 Active</span>
+          </div>
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm hover:border-[var(--laser-cyan)] transition-colors">
+            <span class="font-mono text-[10px] text-[var(--ink-low)] block">MOBILE_VANS_ACTIVE</span>
+            <span id="metric-techs-count" class="text-2xl font-tech font-bold block mt-1">8 Vans Active</span>
+          </div>
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm hover:border-emerald-500/50 transition-colors">
+            <span class="font-mono text-[10px] text-[var(--ink-low)] block">ADAS_CALIBRATIONS</span>
+            <span class="text-2xl font-tech font-bold block mt-1 text-emerald-500">100.00%</span>
+          </div>
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm hover:border-[var(--laser-cyan)] transition-colors">
+            <span class="font-mono text-[10px] text-[var(--ink-low)] block">TODAYS_REVENUE</span>
+            <span id="metric-revenue-val" class="text-2xl font-tech font-bold block mt-1">₹4,82,900</span>
+          </div>
+        </div>
+
+        <!-- Task Table Filter Options Bar -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4">
+          <div class="flex items-center gap-3 font-mono text-xs flex-grow max-w-md">
+            <span class="text-[var(--ink-low)]">SEARCH_BOOKINGS:</span>
+            <input type="text" id="table-search-input" onkeyup="filterTableBySearch()" placeholder="Search by vehicle, location, or customer..." class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] p-2 text-xs focus:outline-none focus:border-[var(--laser-cyan)] text-[var(--ink-high)]">
+          </div>
+          
+          <div class="flex items-center gap-2 font-mono text-[10px]">
+            <button onclick="filterTableByStatus('all')" id="btn-filter-all" class="px-3 py-1.5 bg-[var(--ink-high)] text-[var(--canvas)] font-bold transition-all uppercase">#ALL_BOOKINGS</button>
+            <button onclick="filterTableByStatus('TECH_EN_ROUTE')" id="btn-filter-route" class="px-3 py-1.5 border border-[var(--structural-line)] hover:border-[var(--laser-amber)] text-[var(--ink-mid)] hover:text-white transition-all uppercase">#EN_ROUTE</button>
+            <button onclick="filterTableByStatus('QUEUED_STANDBY')" id="btn-filter-standby" class="px-3 py-1.5 border border-[var(--structural-line)] hover:border-[var(--laser-cyan)] text-[var(--ink-mid)] hover:text-white transition-all uppercase">#STANDBY</button>
+            <button onclick="openNewDispatchModal()" class="px-4 py-1.5 bg-[var(--laser-amber)] text-[var(--canvas)] font-bold hover:bg-amber-500 transition-all uppercase flex items-center gap-1">
+              <span>+</span> Add Appointment
+            </button>
+          </div>
+        </div>
+
+        <!-- Master Queue Table Frame -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] rounded-sm overflow-hidden shadow-xl">
+          <div class="p-4 border-b border-[var(--structural-line)] bg-[var(--surface-raised)] flex justify-between items-center">
+            <h2 class="text-xs font-mono font-bold uppercase tracking-wider">// ACTIVE SERVICE APPOINTMENTS QUEUE</h2>
+            <span class="text-[9px] font-mono text-[var(--ink-low)]">LIVE DISPATCH CONTROL</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left font-mono text-[11px] border-collapse" id="dispatch-matrix-table">
+              <thead>
+                <tr class="bg-[var(--canvas)] border-b border-[var(--structural-line)] text-[var(--ink-low)]">
+                  <th class="p-4">ID</th>
+                  <th class="p-4">SERVICE LOCATION / ZONE</th>
+                  <th class="p-4">VEHICLE DESCRIPTION</th>
+                  <th class="p-4">REQUIRED SERVICES</th>
+                  <th class="p-4">DISPATCH STATUS</th>
+                  <th class="p-4 text-right">ACTION</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[var(--structural-line)] text-[var(--ink-high)]" id="dispatch-table-body">
+                <!-- Task Row 1 -->
+                <tr class="hover:bg-[var(--surface-raised)]/30 transition-colors" data-status="TECH_EN_ROUTE">
+                  <td class="p-4 font-bold text-[var(--laser-amber)]">#TSK-84920</td>
+                  <td class="p-4">Avadi (Zone 3 Area)</td>
+                  <td class="p-4">2023 Honda Civic (ADAS Camera)</td>
+                  <td class="p-4">Windshield Replacement + Calibration</td>
+                  <td class="p-4">
+                    <select onchange="updateRowStatus(this, '84920')" class="bg-[var(--canvas)] border border-[var(--structural-line)] text-[var(--laser-amber)] px-2 py-1 focus:outline-none font-bold">
+                      <option value="QUEUED_STANDBY">QUEUED (STANDBY)</option>
+                      <option value="TECH_EN_ROUTE" selected>TECH EN ROUTE</option>
+                      <option value="SUCCESS_OK">COMPLETED & CALIBRATED</option>
+                    </select>
+                  </td>
+                  <td class="p-4 text-right">
+                    <button onclick="deleteRow(this, '84920')" class="text-rose-500 hover:text-rose-400 font-bold bg-transparent border-none cursor-pointer">[CANCEL]</button>
+                  </td>
+                </tr>
+                <!-- Task Row 2 -->
+                <tr class="hover:bg-[var(--surface-raised)]/30 transition-colors" data-status="QUEUED_STANDBY">
+                  <td class="p-4 font-bold text-[var(--laser-cyan)]">#TSK-84921</td>
+                  <td class="p-4">Sholinganallur Hub</td>
+                  <td class="p-4">Tata Ace Cargo Fleet Truck</td>
+                  <td class="p-4">Windshield Chip Repair (Resin)</td>
+                  <td class="p-4">
+                    <select onchange="updateRowStatus(this, '84921')" class="bg-[var(--canvas)] border border-[var(--structural-line)] text-[var(--laser-cyan)] px-2 py-1 focus:outline-none font-bold">
+                      <option value="QUEUED_STANDBY" selected>QUEUED (STANDBY)</option>
+                      <option value="TECH_EN_ROUTE">TECH EN ROUTE</option>
+                      <option value="SUCCESS_OK">COMPLETED & CALIBRATED</option>
+                    </select>
+                  </td>
+                  <td class="p-4 text-right">
+                    <button onclick="deleteRow(this, '84921')" class="text-rose-500 hover:text-rose-400 font-bold bg-transparent border-none cursor-pointer">[CANCEL]</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION: LIVE DISPATCH LOGS & STATUS -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 w-full">
+          <!-- Live Terminal logs -->
+          <div class="md:col-span-2 border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm font-mono text-[10px] space-y-3 shadow-md relative">
+            <div class="flex justify-between items-center text-[var(--laser-cyan)] font-bold border-b border-[var(--structural-line)] pb-2 mb-2">
+              <span class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-[var(--laser-cyan)] rounded-full animate-ping"></span>
+                <span>// REAL-TIME DISPATCH & ORDER LOGS</span>
+              </span>
+              <span class="text-[8px] bg-cyan-500/10 px-1 text-[var(--laser-cyan)]">DISPATCH_FEED_ACTIVE</span>
+            </div>
+            <div id="live-console-box" class="space-y-1 h-36 overflow-y-auto text-[var(--ink-mid)] select-none">
+              <div>[17:12:12] DISPATCH: Dispatching Service Van #3 to Avadi...</div>
+              <div>[17:12:15] BOOKING: New booking received for T. Nagar (Honda Accord replacement)</div>
+              <div>[17:12:22] ADAS: Diagnostic scanner verified calibration on #TSK-84920</div>
+              <div>[17:12:30] GPS: Technician Van #2 arrived at Sholinganallur customer location</div>
+              <div>[17:12:31] BILLING: Insurance deductible verification success: PROGRESSIVE direct-pay approved.</div>
+            </div>
+          </div>
+          <!-- Dispatch system status -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-4 rounded-sm font-mono text-[10px] space-y-3 shadow-md">
+            <div class="text-[var(--laser-amber)] font-bold border-b border-[var(--structural-line)] pb-2 mb-2">
+              <span>// SYSTEM STATUS</span>
+            </div>
+            <div class="space-y-2 text-[var(--ink-mid)]">
+              <div class="flex justify-between border-b border-[var(--structural-line)]/30 pb-1">
+                <span>DISPATCH_VANS_IDLE:</span> <span id="diag-cpu-load" class="text-white font-medium">3 Vans</span>
+              </div>
+              <div class="flex justify-between border-b border-[var(--structural-line)]/30 pb-1">
+                <span>INVENTORY_LEVELS:</span> <span class="text-white font-medium">42 OEM Panels / 12 Aftermarket</span>
+              </div>
+              <div class="flex justify-between border-b border-[var(--structural-line)]/30 pb-1">
+                <span>ADAS_SCANNER_STATUS:</span> <span class="text-emerald-500 font-bold">ONLINE (100% Calibrated)</span>
+              </div>
+              <div class="flex justify-between">
+                <span>INSURANCE_PORTAL:</span> <span class="text-emerald-500 font-bold">CONNECTED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- INACTIVE TAB: Service Area Hubs -->
+      <div id="tab-content-telemetry" class="p-8 space-y-6 flex-grow hidden">
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm space-y-4">
+          <h2 class="text-lg font-bold font-tech text-[var(--laser-cyan)] uppercase border-b border-[var(--structural-line)] pb-3">// Active Mobile Service Area Hubs</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-[10px] text-[var(--ink-mid)]">
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] rounded-sm space-y-1">
+              <span class="text-[var(--ink-high)] font-bold block mb-2">// AVADI SERVICE ZONE</span>
+              <div>Operational State: <span class="text-emerald-500 font-bold">ACTIVE</span></div>
+              <div>Mobile Technicians: <span class="text-white font-bold">4 Vans</span></div>
+              <div>Average Response Time: <span class="text-white font-bold">42 mins</span></div>
+            </div>
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] rounded-sm space-y-1">
+              <span class="text-[var(--ink-high)] font-bold block mb-2">// SHOLINGANALLUR ZONE</span>
+              <div>Operational State: <span class="text-emerald-500 font-bold">ACTIVE</span></div>
+              <div>Mobile Technicians: <span class="text-white font-bold">8 Vans</span></div>
+              <div>Average Response Time: <span class="text-white font-bold">35 mins</span></div>
+            </div>
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] rounded-sm space-y-1">
+              <span class="text-[var(--ink-high)] font-bold block mb-2">// AMBATTUR ZONE</span>
+              <div>Operational State: <span class="text-[var(--laser-amber)] font-bold">MAINTENANCE</span></div>
+              <div>Mobile Technicians: <span class="text-white font-bold">2 Vans</span></div>
+              <div>Average Response Time: <span class="text-white font-bold">50 mins</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INACTIVE TAB: Response Policies -->
+      <div id="tab-content-sla" class="p-8 space-y-6 flex-grow hidden">
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm space-y-4">
+          <h2 class="text-lg font-bold font-tech text-[var(--laser-amber)] uppercase border-b border-[var(--structural-line)] pb-3">// Service Dispatch Response Policies</h2>
+          <div class="space-y-3 font-mono text-[11px] text-[var(--ink-mid)] max-w-2xl">
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] flex justify-between items-center">
+              <div>
+                <h4 class="font-bold text-white uppercase">Standard Response Policy</h4>
+                <p class="text-[9px] text-[var(--ink-low)]">Standard customer mobile glass repair response window.</p>
+              </div>
+              <span class="text-emerald-500 font-bold">&lt; 4-Hour Response Guarantee</span>
+            </div>
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--canvas)] flex justify-between items-center">
+              <div>
+                <h4 class="font-bold text-white uppercase">Premium B2B Enterprise Route</h4>
+                <p class="text-[9px] text-[var(--ink-low)]">Priority dispatch window for commercial fleet delivery and shipping networks.</p>
+              </div>
+              <span class="text-emerald-500 font-bold">&lt; 90-Minute Response Guarantee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="app-footer"></div>
+    </main>
+  </div>
+
+  <!-- APPOINTMENT REGISTRATION MODAL -->
+  <div id="new-dispatch-modal" class="fixed inset-0 bg-[var(--canvas)]/95 backdrop-blur-md z-50 flex items-center justify-center p-6 hidden">
+    <div class="w-full max-w-md border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm shadow-2xl relative font-mono text-xs">
+      <button onclick="closeNewDispatchModal()" class="absolute top-4 right-4 text-[var(--ink-low)] hover:text-white font-mono font-bold text-sm bg-transparent border-none cursor-pointer">[CLOSE_X]</button>
+      
+      <div class="border-b border-[var(--structural-line)] pb-3 mb-4">
+        <span class="text-[9px] text-[var(--laser-cyan)] block font-bold tracking-widest">// NEW APPOINTMENT REGISTRATION //</span>
+        <h3 class="text-lg font-bold font-display text-[var(--ink-high)] mt-1 uppercase">Schedule New Service Appointment</h3>
+      </div>
+
+      <form id="new-dispatch-form" onsubmit="handleNewDispatchSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block text-[var(--ink-low)] mb-1 uppercase font-bold">Service Location Address</label>
+          <input type="text" id="input-location" placeholder="e.g., T. Nagar Sector Central" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[var(--laser-cyan)] text-[var(--ink-high)]" required />
+        </div>
+        
+        <div>
+          <label class="block text-[var(--ink-low)] mb-1 uppercase font-bold">Vehicle Details (Year, Make, Model)</label>
+          <input type="text" id="input-vehicle" placeholder="e.g., 2024 Honda Accord" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[var(--laser-cyan)] text-[var(--ink-high)]" required />
+        </div>
+
+        <div>
+          <label class="block text-[var(--ink-low)] mb-1 uppercase font-bold">Required Auto Glass Services</label>
+          <select id="input-service" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[var(--laser-cyan)] text-[var(--ink-high)]" required>
+            <option value="Windshield Replacement + Calibration">Windshield Replacement + ADAS Calibration</option>
+            <option value="Windshield Chip Repair (Resin)">Windshield Chip Repair (Resin)</option>
+            <option value="ADAS Camera & Sensor Calibration">ADAS Camera & Sensor Calibration</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-[var(--ink-low)] mb-1 uppercase font-bold">Dispatch Status</label>
+          <select id="input-status" class="w-full bg-[var(--canvas)] border border-[var(--structural-line)] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[var(--laser-cyan)] text-[var(--ink-high)]" required>
+            <option value="QUEUED_STANDBY" selected>QUEUED (STANDBY)</option>
+            <option value="TECH_EN_ROUTE">TECH EN ROUTE</option>
+          </select>
+        </div>
+
+        <div class="pt-2 flex justify-end gap-3">
+          <button type="button" onclick="closeNewDispatchModal()" class="border border-[var(--structural-line)] px-4 py-2 hover:border-white transition-colors">Cancel</button>
+          <button type="submit" class="bg-[var(--laser-amber)] text-[var(--canvas)] px-6 py-2 font-bold hover:bg-amber-500 transition-colors uppercase">Create Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ADMIN WORKSPACE LOGIC FUNCTIONS -->
+  <script>
+    // Tab Controller
+    function switchTab(tabName) {
+      // Hide all tabs
+      document.getElementById('tab-content-queue').classList.add('hidden');
+      document.getElementById('tab-content-telemetry').classList.add('hidden');
+      document.getElementById('tab-content-sla').classList.add('hidden');
+
+      document.getElementById('nav-queue').className = "flex items-center gap-3 px-3 py-2 hover:bg-[var(--surface-raised)] border-l-2 border-transparent transition-all";
+      document.getElementById('nav-telemetry').className = "flex items-center gap-3 px-3 py-2 hover:bg-[var(--surface-raised)] border-l-2 border-transparent transition-all";
+      document.getElementById('nav-sla').className = "flex items-center gap-3 px-3 py-2 hover:bg-[var(--surface-raised)] border-l-2 border-transparent transition-all";
+
+      // Show selected tab
+      document.getElementById('tab-content-' + tabName).classList.remove('hidden');
+      const activeNav = document.getElementById('nav-' + tabName);
+      activeNav.className = "flex items-center gap-3 px-3 py-2 bg-[var(--surface-raised)] text-[var(--laser-amber)] border-l-2 border-var(--laser-amber) transition-all";
+      
+      // Update border highlighting using color variables
+      if (tabName === 'queue') {
+        activeNav.classList.add('text-[var(--laser-amber)]', 'border-[var(--laser-amber)]');
+      } else {
+        activeNav.classList.add('text-[var(--laser-cyan)]', 'border-[var(--laser-cyan)]');
+      }
+    }
+
+    // Modal Operations
+    function openNewDispatchModal() {
+      document.getElementById('new-dispatch-modal').classList.remove('hidden');
+    }
+
+    // Explicitly define variable to simulate CPU stats
+    let simulatedIdleVansCount = 3;
+
+    function closeNewDispatchModal() {
+      document.getElementById('new-dispatch-modal').classList.add('hidden');
+    }
+
+    // Row Operations
+    function deleteRow(btn, id) {
+      const row = btn.closest('tr');
+      row.remove();
+      addConsoleLog('[17:15:44] CANCEL: Service appointment #' + id + ' cancelled by dispatch coordinator.');
+      updateMetricsCount();
+    }
+
+    function updateRowStatus(select, id) {
+      const status = select.value;
+      const row = select.closest('tr');
+      row.setAttribute('data-status', status);
+
+      // Adjust text colors and style of select depending on value
+      if (status === 'SUCCESS_OK') {
+        select.className = "bg-[var(--canvas)] border border-[var(--structural-line)] text-emerald-500 px-2 py-1 focus:outline-none font-bold";
+        addConsoleLog('[17:14:15] ADAS: Service appointment #' + id + ' calibration verified and completed.');
+      } else if (status === 'TECH_EN_ROUTE') {
+        select.className = "bg-[var(--canvas)] border border-[var(--structural-line)] text-[var(--laser-amber)] px-2 py-1 focus:outline-none font-bold";
+        addConsoleLog('[17:14:15] GPS: Service van assigned to #' + id + ' is en route (GPS tracked).');
+      } else {
+        select.className = "bg-[var(--canvas)] border border-[var(--structural-line)] text-[var(--laser-cyan)] px-2 py-1 focus:outline-none font-bold";
+        addConsoleLog('[17:14:15] QUEUE: Service appointment #' + id + ' moved back to standby queue.');
+      }
+      updateMetricsCount();
+    }
+
+    // Modal Form Submit
+    function handleNewDispatchSubmit(e) {
+      e.preventDefault();
+      
+      const loc = document.getElementById('input-location').value;
+      const vehicle = document.getElementById('input-vehicle').value;
+      const service = document.getElementById('input-service').value;
+      const status = document.getElementById('input-status').value;
+      
+      const newId = Math.floor(84922 + Math.random() * 1000);
+      const tableBody = document.getElementById('dispatch-table-body');
+      
+      const newRow = document.createElement('tr');
+      newRow.className = "hover:bg-[var(--surface-raised)]/30 transition-colors";
+      newRow.setAttribute('data-status', status);
+      
+      const selectColorClass = status === 'TECH_EN_ROUTE' ? 'text-[var(--laser-amber)]' : 'text-[var(--laser-cyan)]';
+      const idColorClass = status === 'TECH_EN_ROUTE' ? 'text-[var(--laser-amber)]' : 'text-[var(--laser-cyan)]';
+      
+      const displayStatusText = status === 'TECH_EN_ROUTE' ? 'TECH EN ROUTE' : 'QUEUED (STANDBY)';
+      
+      newRow.innerHTML = `
+        <td class="p-4 font-bold ${idColorClass}">#TSK-${newId}</td>
+        <td class="p-4">${loc}</td>
+        <td class="p-4">${vehicle}</td>
+        <td class="p-4">${service}</td>
+        <td class="p-4">
+          <select onchange="updateRowStatus(this, '${newId}')" class="bg-[var(--canvas)] border border-[var(--structural-line)] ${selectColorClass} px-2 py-1 focus:outline-none font-bold">
+            <option value="QUEUED_STANDBY" ${status === 'QUEUED_STANDBY' ? 'selected' : ''}>QUEUED (STANDBY)</option>
+            <option value="TECH_EN_ROUTE" ${status === 'TECH_EN_ROUTE' ? 'selected' : ''}>TECH EN ROUTE</option>
+            <option value="SUCCESS_OK">COMPLETED & CALIBRATED</option>
+          </select>
+        </td>
+        <td class="p-4 text-right">
+          <button onclick="deleteRow(this, '${newId}')" class="text-rose-500 hover:text-rose-400 font-bold bg-transparent border-none cursor-pointer">[CANCEL]</button>
+        </td>
+      `;
+      
+      tableBody.appendChild(newRow);
+      
+      // Update pending metrics & revenues
+      updateMetricsCount();
+      
+      // Add revenue block increment
+      const revenueSpan = document.getElementById('metric-revenue-val');
+      const currentRevenue = parseInt(revenueSpan.innerText.replace(/[^0-9]/g, ''));
+      revenueSpan.innerText = '₹' + (currentRevenue + 14500).toLocaleString('en-IN');
+
+      addConsoleLog('[17:13:12] BOOKING: New service appointment #TSK-' + newId + ' registered in system.');
+      
+      // Reset form and close modal
+      document.getElementById('new-dispatch-form').reset();
+      closeNewDispatchModal();
+    }
+
+    // Metrics Counter recalculation
+    function updateMetricsCount() {
+      const tableBody = document.getElementById('dispatch-table-body');
+      const rows = tableBody.querySelectorAll('tr');
+      let activeCount = 0;
+      
+      rows.forEach(row => {
+        const status = row.getAttribute('data-status');
+        if (status === 'QUEUED_STANDBY' || status === 'TECH_EN_ROUTE') {
+          activeCount++;
+        }
+      });
+      
+      document.getElementById('metric-pending-count').innerText = activeCount + (activeCount === 1 ? ' Active' : ' Active');
+    }
+
+    // Search and filters
+    function filterTableBySearch() {
+      const input = document.getElementById('table-search-input');
+      const filter = input.value.toUpperCase();
+      const tableBody = document.getElementById('dispatch-table-body');
+      const rows = tableBody.querySelectorAll('tr');
+      
+      rows.forEach(row => {
+        const text = row.innerText.toUpperCase();
+        if (text.indexOf(filter) > -1) {
+          row.classList.remove('hidden');
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+    }
+
+    // Status filter
+    function filterTableByStatus(status) {
+      const tableBody = document.getElementById('dispatch-table-body');
+      const rows = tableBody.querySelectorAll('tr');
+
+      // Adjust active highlights on filter buttons
+      document.getElementById('btn-filter-all').className = "px-3 py-1.5 border border-[var(--structural-line)] text-[var(--ink-mid)] hover:text-white transition-all uppercase";
+      document.getElementById('btn-filter-route').className = "px-3 py-1.5 border border-[var(--structural-line)] text-[var(--ink-mid)] hover:text-white transition-all uppercase";
+      document.getElementById('btn-filter-standby').className = "px-3 py-1.5 border border-[var(--structural-line)] text-[var(--ink-mid)] hover:text-white transition-all uppercase";
+
+      if (status === 'all') {
+        document.getElementById('btn-filter-all').className = "px-3 py-1.5 bg-[var(--ink-high)] text-[var(--canvas)] font-bold transition-all uppercase";
+        rows.forEach(row => row.classList.remove('hidden'));
+      } else if (status === 'TECH_EN_ROUTE') {
+        document.getElementById('btn-filter-route').className = "px-3 py-1.5 bg-[var(--laser-amber)] text-[var(--canvas)] font-bold transition-all uppercase";
+        rows.forEach(row => {
+          if (row.getAttribute('data-status') === 'TECH_EN_ROUTE') {
+            row.classList.remove('hidden');
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+      } else if (status === 'QUEUED_STANDBY') {
+        document.getElementById('btn-filter-standby').className = "px-3 py-1.5 bg-[var(--laser-cyan)] text-[var(--canvas)] font-bold transition-all uppercase";
+        rows.forEach(row => {
+          if (row.getAttribute('data-status') === 'QUEUED_STANDBY') {
+            row.classList.remove('hidden');
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+      }
+    }
+
+    // Terminal Logging Console Stream
+    const logBox = document.getElementById('live-console-box');
+    const logsPool = [
+      'GPS: Service Van #4 en route to Ambattur client location.',
+      'ADAS: Static alignment target boards calibrated successfully.',
+      'DISPATCH: Booking #TSK-84921 confirmed for tomorrow morning.',
+      'BILLING: Claim filed with insurance portal successfully.',
+      'GPS: Technician Van #1 dispatched to T. Nagar area.',
+      'ADAS: Target board settings TG-BMW-24 verified for BMW camera.',
+      'SERVICE: 45-minute Safe Drive-Away Time (SDAT) clock active for #TSK-84920.',
+      'DISPATCH: Emergency dispatch request received for cracked windshield.',
+      'ADAS: Calibration certificate generated for customer #TSK-84920.'
+    ];
+
+    function addConsoleLog(text) {
+      const logLine = document.createElement('div');
+      logLine.innerText = text;
+      logBox.appendChild(logLine);
+      logBox.scrollTop = logBox.scrollHeight;
+    }
+
+    // Tick new log lines every 3.5 seconds
+    setInterval(() => {
+      const date = new Date();
+      const timeStr = '[' + 
+        (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':' +
+        (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':' +
+        (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()) + ']';
+      
+      const randomLog = logsPool[Math.floor(Math.random() * logsPool.length)];
+      addConsoleLog(timeStr + ' ' + randomLog);
+
+      // Randomly fluctuate idle vans count to look alive
+      simulatedIdleVansCount = Math.floor(Math.random() * 4) + 1;
+      document.getElementById('diag-cpu-load').innerText = simulatedIdleVansCount + ' Vans';
+    }, 3500);
+
+    // Initial count
+    updateMetricsCount();
+  </script>
+
+  <script src="../assets/js/layout.js"></script>
+  <div id="app-footer"></div>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Service Tracking Center // Kinetic Auto Glass</title>
+  <link rel="icon" type="image/png" href="../assets/images/brand-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="antialiased bg-[var(--canvas)] font-body text-[var(--ink-high)] precision-grid-bg min-h-screen">
+  <header class="sticky top-0 z-50 w-full border-b border-[var(--structural-line)] bg-[var(--canvas)]/80 backdrop-blur-md px-6 lg:px-12 py-4 flex items-center justify-between gap-4">
+ 
+      <a href="../index.html" class="font-display font-black tracking-widest text-lg uppercase hover:text-[var(--laser-cyan)] transition-colors flex flex-row items-center"><img src="../assets/images/brand-logo.png" class="w-16 h-auto -ml-4" alt="Logo">KINETIC AUTO GLASS</a>
+
+      <div class="flex items-center gap-3 font-mono text-xs">
+        <a href="booking.html" class="border border-[var(--laser-amber)] px-4 py-2 text-[var(--laser-amber)] hover:bg-[var(--laser-amber)]/10 transition-all rounded-none uppercase hidden sm:inline-flex">
+          Book Mobile Service
+        </a>
+
+        <!-- Profile Avatar with Dropdown -->
+        <div class="relative group">
+          <button id="user-profile-btn" aria-label="Account Menu" class="w-9 h-9 border border-[var(--structural-line)] bg-[var(--surface-solid)] hover:border-[var(--laser-cyan)] text-[var(--ink-mid)] hover:text-[var(--laser-cyan)] transition-colors flex items-center justify-center rounded-none">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute ltr:right-0 rtl:left-0 mt-2 w-48 bg-[var(--surface-solid)] border border-[var(--structural-line)] shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 origin-top-right z-50">
+            <div class="py-2 flex flex-col text-[11px] font-mono">
+              <div class="px-4 py-2 border-b border-[var(--structural-line)] text-[var(--laser-cyan)] font-bold tracking-widest uppercase text-[9px]">MY ACCOUNT</div>
+              <a href="#" class="px-4 py-2.5 flex items-center gap-2 text-[var(--ink-mid)] hover:bg-[var(--surface-raised)] hover:text-[var(--laser-cyan)] transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                My Account
+              </a>
+              <a href="login-register.html" class="px-4 py-2.5 flex items-center gap-2 text-rose-500 hover:bg-rose-500/10 hover:text-rose-400 transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-12 space-y-8">
+    <!-- Top Workspace Header -->
+    <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative overflow-hidden shadow-xl">
+      <!-- Decorative Corner Accent -->
+      <div class="absolute top-0 right-0 w-2 h-2 bg-[var(--laser-amber)]"></div>
+      <div>
+        <span class="font-mono text-[9px] tracking-widest text-[var(--laser-cyan)] font-bold">// KINETIC AUTO GLASS SERVICE TRACKING</span>
+        <h1 class="text-3xl font-black font-display tracking-tight text-[var(--ink-high)] mt-1">My Service Tracking Center</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--laser-amber)] animate-pulse shadow-[0_0_8px_var(--laser-amber)]"></span>
+        <span class="font-mono text-xs text-[var(--laser-amber)] uppercase tracking-widest">Technician Dispatched</span>
+      </div>
+    </div>
+
+    <!-- Main Grid Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT COLUMN: Workflow Tracking (7 Cols) -->
+      <div class="lg:col-span-7 space-y-6">
+        <!-- Active Transaction Main Card -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 sm:p-8 rounded-sm shadow-xl space-y-6">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-[var(--structural-line)] gap-2">
+            <div>
+              <span class="font-mono text-[10px] text-[var(--ink-low)] uppercase">// ACTIVE SERVICE APPOINTMENT</span>
+              <h2 class="text-lg font-bold font-tech text-[var(--ink-high)]">Booking ID: #KM-84920</h2>
+            </div>
+            <div class="font-mono text-[10px] text-right">
+              <span class="text-[var(--ink-low)] block">YOUR VEHICLE</span>
+              <span class="text-white font-bold">2024 BMW M4 Competition</span>
+            </div>
+          </div>
+
+          <!-- Active Process Progression Map (Interactive Step Cards) -->
+          <div class="space-y-4">
+            <h3 class="font-mono text-[10px] text-[var(--ink-low)] uppercase font-bold tracking-widest">// CLICK STEPS FOR STATUS DETAILS</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+              <!-- Step 1 (Done) -->
+              <button id="step-btn-1" onclick="selectStep(1)" class="w-full text-left p-4 border border-emerald-500/30 bg-emerald-500/5 hover:bg-emerald-500/10 transition-all rounded-none relative">
+                <div class="font-mono text-[9px] text-emerald-500 font-bold">[01] OK</div>
+                <div class="font-bold text-[var(--ink-high)] text-xs mt-1">Booking Scheduled</div>
+                <div class="text-[9px] text-[var(--ink-low)] font-mono mt-2">09:30 AM</div>
+              </button>
+
+              <!-- Step 2 (Active) -->
+              <button id="step-btn-2" onclick="selectStep(2)" class="w-full text-left p-4 border-2 border-[var(--laser-amber)] bg-[var(--surface-raised)] hover:bg-[var(--surface-metal)] transition-all rounded-none relative">
+                <div class="absolute -top-1.5 right-2 bg-[var(--laser-amber)] text-[var(--canvas)] px-1 text-[8px] font-mono font-bold uppercase tracking-wider">LIVE</div>
+                <div class="font-mono text-[9px] text-[var(--laser-amber)] font-bold animate-pulse">[02] DISPATCHED</div>
+                <div class="font-bold text-[var(--ink-high)] text-xs mt-1">Tech En Route</div>
+                <div class="text-[9px] text-[var(--laser-amber)] font-mono mt-2">ETA: 14m</div>
+              </button>
+
+              <!-- Step 3 (Pending) -->
+              <button id="step-btn-3" onclick="selectStep(3)" class="w-full text-left p-4 border border-[var(--structural-line)] bg-[var(--surface-solid)] hover:bg-[var(--surface-raised)] opacity-50 transition-all rounded-none">
+                <div class="font-mono text-[9px] text-[var(--ink-low)]">[03] PEND</div>
+                <div class="font-bold text-[var(--ink-high)] text-xs mt-1">Glass Install</div>
+                <div class="text-[9px] text-[var(--ink-low)] font-mono mt-2">Est: 45 Mins</div>
+              </button>
+
+              <!-- Step 4 (Pending) -->
+              <button id="step-btn-4" onclick="selectStep(4)" class="w-full text-left p-4 border border-[var(--structural-line)] bg-[var(--surface-solid)] hover:bg-[var(--surface-raised)] opacity-50 transition-all rounded-none">
+                <div class="font-mono text-[9px] text-[var(--ink-low)]">[04] PEND</div>
+                <div class="font-bold text-[var(--ink-high)] text-xs mt-1">ADAS Align</div>
+                <div class="text-[9px] text-[var(--ink-low)] font-mono mt-2">Cure Audit</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Service Log Console (Updates depending on selected step) -->
+          <div class="border border-[var(--structural-line)] bg-[var(--surface-raised)] p-4 font-mono text-[10px] space-y-2 rounded-sm relative">
+            <div class="flex justify-between items-center text-[var(--laser-cyan)] font-bold border-b border-[var(--structural-line)] pb-2">
+              <span>// STEP SERVICE DETAILS // <span id="console-step-num">02</span></span>
+              <span id="console-step-status" class="text-[var(--laser-amber)]">STATUS: TECHNICIAN EN ROUTE</span>
+            </div>
+            <div id="console-log-readout" class="h-28 overflow-y-auto text-[var(--ink-mid)] space-y-1">
+              <!-- Default logs for step 2 -->
+              <div>[17:24:12] GPS: Real-time tracking link established with Technician Van #4.</div>
+              <div>[17:24:15] GPS: Van currently traveling on central corridor (ETA: 14m).</div>
+              <div>[17:24:20] ADAS: System matching pre-loaded targets: TG-BMW-24 calibration.</div>
+              <div>[17:24:28] GPS: Route optimized, technician traveling at normal speeds.</div>
+            </div>
+          </div>
+
+          <!-- Technician Details card -->
+          <div class="pt-6 border-t border-[var(--structural-line)] grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+            <div class="p-4 border border-[var(--structural-line)] bg-[var(--surface-raised)] flex items-center gap-4">
+              <div class="w-12 h-12 bg-[var(--surface-metal)] border border-[var(--laser-cyan)] flex items-center justify-center font-mono text-[var(--laser-cyan)] text-xs font-bold shadow-[0_0_8px_rgba(34,211,238,0.2)]">
+                M_V
+              </div>
+              <div>
+                <span class="font-mono text-[9px] uppercase text-[var(--ink-low)] block">Assigned Specialist</span>
+                <h4 class="text-sm font-bold font-tech text-[var(--ink-high)]">Marcus Vance</h4>
+                <span class="text-[9px] text-emerald-500 font-mono block mt-0.5">&bull; AGSC Master Certificate Verified</span>
+              </div>
+            </div>
+            <div class="font-mono text-[10px] space-y-1.5 text-[var(--ink-mid)]">
+              <div class="flex justify-between border-b border-[var(--structural-line)]/50 pb-1">
+                <span>SERVICE LOCATION:</span> 
+                <span class="text-[var(--ink-high)] font-medium">Avadi Area</span>
+              </div>
+              <div class="flex justify-between border-b border-[var(--structural-line)]/50 pb-1">
+                <span>ADHESIVE TYPE:</span> 
+                <span class="text-[var(--ink-high)] font-medium">Quick-Cure Polyurethane</span>
+              </div>
+              <div class="flex justify-between">
+                <span>WINDSHIELD SPEC:</span> 
+                <span class="text-[var(--ink-high)] font-medium">Acoustic Solar HUD Glass</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION: PAST SERVICE HISTORY -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] rounded-sm overflow-hidden font-mono text-xs w-full">
+          <div class="p-4 border-b border-[var(--structural-line)] bg-[var(--surface-raised)] flex justify-between items-center">
+            <h2 class="font-bold text-[var(--ink-high)]">// YOUR VEHICLE AUTO GLASS SERVICE HISTORY</h2>
+            <span class="text-[9px] text-[var(--laser-cyan)] border border-cyan-500/20 bg-cyan-500/5 px-2 py-0.5">3 COMPLETED SERVICE RECORDS</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-[11px] border-collapse">
+              <thead>
+                <tr class="bg-[var(--canvas)] border-b border-[var(--structural-line)] text-[var(--ink-low)]">
+                  <th class="p-3">DATE</th>
+                  <th class="p-3">SERVICE ID</th>
+                  <th class="p-3">VEHICLE</th>
+                  <th class="p-3">STATUS</th>
+                  <th class="p-3 text-right">CERTIFICATE</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[var(--structural-line)] text-[var(--ink-high)]">
+                <tr class="hover:bg-[var(--surface-raised)] transition-colors">
+                  <td class="p-3">12-MAR-2026</td>
+                  <td class="p-3 font-bold text-[var(--laser-cyan)]">#TSK-40291</td>
+                  <td class="p-3">Honda Civic Sedan</td>
+                  <td class="p-3 text-emerald-500">COMPLETED & CALIBRATED</td>
+                  <td class="p-3 text-right"><button onclick="openCertificateModal('40291', '12-MAR-2026', 'Honda Civic Sedan', 'Marcus Vance')" class="text-[var(--laser-cyan)] hover:underline font-bold bg-transparent border-none p-0 cursor-pointer">VIEW DETAILS &darr;</button></td>
+                </tr>
+                <tr class="hover:bg-[var(--surface-raised)] transition-colors">
+                  <td class="p-3">04-JAN-2026</td>
+                  <td class="p-3 font-bold text-[var(--laser-cyan)]">#TSK-39824</td>
+                  <td class="p-3">Hyundai Creta SUV</td>
+                  <td class="p-3 text-emerald-500">COMPLETED & CALIBRATED</td>
+                  <td class="p-3 text-right"><button onclick="openCertificateModal('39824', '04-JAN-2026', 'Hyundai Creta SUV', 'Marcus Vance')" class="text-[var(--laser-cyan)] hover:underline font-bold bg-transparent border-none p-0 cursor-pointer">VIEW DETAILS &darr;</button></td>
+                </tr>
+                <tr class="hover:bg-[var(--surface-raised)] transition-colors">
+                  <td class="p-3">19-NOV-2025</td>
+                  <td class="p-3 font-bold text-[var(--laser-cyan)]">#TSK-31902</td>
+                  <td class="p-3">BMW 3 Series Coupe</td>
+                  <td class="p-3 text-emerald-500">COMPLETED & CALIBRATED</td>
+                  <td class="p-3 text-right"><button onclick="openCertificateModal('31902', '19-NOV-2025', 'BMW 3 Series Coupe', 'Arun Patel')" class="text-[var(--laser-cyan)] hover:underline font-bold bg-transparent border-none p-0 cursor-pointer">VIEW DETAILS &darr;</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: GPS Tracking & Active Control (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Live GPS Radar Card -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm shadow-xl space-y-4">
+          <div class="flex justify-between items-center border-b border-[var(--structural-line)] pb-3">
+            <div class="font-mono text-[10px] text-[var(--laser-cyan)] font-bold">// LIVE MOBILE SERVICE VAN TRACKER</div>
+            <span class="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
+          </div>
+
+          <!-- Radar Screen SVG -->
+          <div class="h-60 bg-[var(--canvas)] border border-[var(--structural-line)] flex flex-col items-center justify-center relative overflow-hidden rounded-sm">
+            <!-- Grid Background Overlay -->
+            <div class="absolute inset-0 opacity-15 bg-[radial-gradient(var(--laser-cyan)_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            
+            <!-- Radar Circle Lines -->
+            <div class="absolute w-48 h-48 border border-[var(--structural-line)] rounded-full animate-pulse opacity-40"></div>
+            <div class="absolute w-32 h-32 border border-[var(--structural-line)] rounded-full opacity-30"></div>
+            <div class="absolute w-16 h-16 border border-[var(--structural-line)] rounded-full opacity-20"></div>
+
+            <!-- Radar Sweep Line -->
+            <div class="absolute w-48 h-48 pointer-events-none opacity-20">
+              <div class="w-full h-full rounded-full border-r border-[var(--laser-cyan)] origin-center animate-[spin_5s_linear_infinite]" style="background: conic-gradient(from 0deg, transparent 90%, rgba(34, 211, 238, 0.15));"></div>
+            </div>
+
+            <!-- Interactive GPS Map SVG -->
+            <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <!-- Route Path -->
+              <path id="gps-route" d="M 50 180 L 120 180 L 120 110 L 220 110" fill="none" stroke="rgba(245, 158, 11, 0.2)" stroke-width="2" stroke-dasharray="4,4" />
+              
+              <!-- Target Crosshair -->
+              <g transform="translate(220, 110)">
+                <circle r="6" fill="none" stroke="rgba(239, 68, 68, 0.6)" stroke-width="1.5" />
+                <line x1="-12" y1="0" x2="12" y2="0" stroke="rgba(239, 68, 68, 0.6)" stroke-width="1" />
+                <line x1="0" y1="-12" x2="0" y2="12" stroke="rgba(239, 68, 68, 0.6)" stroke-width="1" />
+                <circle r="2" fill="red" />
+              </g>
+
+              <!-- Node Point -->
+              <circle id="gps-node" cx="50" cy="180" r="5" fill="var(--laser-cyan)" filter="drop-shadow(0 0 6px var(--laser-cyan))">
+                <animateMotion dur="20s" repeatCount="indefinite" path="M 0 0 L 70 0 L 70 -70 L 170 -70" />
+              </circle>
+            </svg>
+
+            <!-- Coordinate Text -->
+            <div class="absolute bottom-2 left-3 font-mono text-[9px] text-[var(--ink-low)]">
+              VAN // SPEED: <span id="gps-speed-log" class="text-white">42 km/h</span><br>
+              GPS: <span id="gps-coordinates-log" class="text-white">13.1091° N / 80.1124° E</span>
+            </div>
+            
+            <div class="absolute top-2 right-3 font-mono text-[8px] text-[var(--laser-cyan)] bg-cyan-500/10 px-1 border border-cyan-500/20">
+              AVADI COVERAGE ZONE
+            </div>
+          </div>
+
+          <!-- Active ETA Counter -->
+          <div class="grid grid-cols-2 gap-4 text-center font-mono">
+            <div class="p-3 border border-[var(--structural-line)] bg-[var(--surface-raised)]">
+              <span class="text-[9px] text-[var(--ink-low)] block">// ESTIMATED TIME OF ARRIVAL</span>
+              <span id="eta-countdown-ticker" class="text-lg font-bold text-[var(--laser-amber)] tracking-wider">13m 48s 023ms</span>
+            </div>
+            <div class="p-3 border border-[var(--structural-line)] bg-[var(--surface-raised)]">
+              <span class="text-[9px] text-[var(--ink-low)] block">// DISTANCE TO DESTINATION</span>
+              <span id="distance-gap-ticker" class="text-lg font-bold text-white tracking-wider">4.82 km</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Control Action Options -->
+        <div class="border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 rounded-sm shadow-xl space-y-4">
+          <div class="font-mono text-[10px] text-[var(--ink-low)] uppercase font-bold tracking-widest">// CUSTOMER SERVICE CONTROL</div>
+          
+          <div class="space-y-3">
+            <button onclick="pingTechnicianSignal()" class="w-full machined-button bg-[var(--laser-cyan)] text-[var(--canvas)] font-bold py-3 hover:bg-cyan-400 transition-colors uppercase tracking-widest text-center shadow-[0_0_12px_rgba(34,211,238,0.2)]">
+              Send Message to Technician
+            </button>
+            <button onclick="openCertificateModal('84920', 'CURRENT_SESSION', 'BMW M4 Competition', 'Marcus Vance')" class="w-full border border-[var(--structural-line)] bg-[var(--surface-solid)] text-[var(--ink-high)] hover:border-[var(--laser-cyan)] hover:text-[var(--laser-cyan)] transition-all font-mono py-3 uppercase tracking-widest text-xs">
+              View Active Calibration Specs
+            </button>
+          </div>
+          
+          <div id="action-status-terminal" class="bg-[var(--canvas)] p-3 border border-[var(--structural-line)] font-mono text-[9px] text-emerald-500 rounded-sm hidden">
+            &gt; Message sent to technician... Success. [Response received: "On my way!"]
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CALIBRATION CERTIFICATE MODAL -->
+  <div id="certificate-modal" class="fixed inset-0 bg-[var(--canvas)]/95 backdrop-blur-md z-50 flex items-center justify-center p-6 hidden">
+    <div class="w-full max-w-lg border border-[var(--structural-line)] bg-[var(--surface-solid)] p-6 sm:p-8 rounded-sm shadow-2xl relative font-mono text-xs text-[var(--ink-mid)]">
+      <button onclick="closeCertificateModal()" class="absolute top-4 right-4 text-[var(--ink-low)] hover:text-white font-mono font-bold text-sm bg-transparent border-none cursor-pointer">[CLOSE_X]</button>
+      
+      <!-- Certificate Content Structure -->
+      <div class="border-b border-[var(--structural-line)] pb-4 mb-6 text-center">
+        <span class="text-[9px] text-[var(--laser-cyan)] block font-bold tracking-widest">// KINETIC AUTO GLASS SERVICE CERTIFICATE //</span>
+        <h3 class="text-xl font-bold font-display text-[var(--ink-high)] uppercase mt-1">Windshield Calibration Certificate</h3>
+      </div>
+
+      <div class="space-y-4">
+        <div class="grid grid-cols-2 gap-4 border-b border-[var(--structural-line)]/50 pb-3">
+          <div>
+            <span class="text-[9px] text-[var(--ink-low)] block">SERVICE ID:</span>
+            <span id="modal-cert-id" class="text-[var(--ink-high)] font-bold">#TSK-84920</span>
+          </div>
+          <div>
+            <span class="text-[9px] text-[var(--ink-low)] block">CALIBRATION DATE:</span>
+            <span id="modal-cert-date" class="text-[var(--ink-high)] font-bold">23-MAY-2026</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 border-b border-[var(--structural-line)]/50 pb-3">
+          <div>
+            <span class="text-[9px] text-[var(--ink-low)] block">VEHICLE MODEL:</span>
+            <span id="modal-cert-vehicle" class="text-[var(--ink-high)]">BMW M4 Competition</span>
+          </div>
+          <div>
+            <span class="text-[9px] text-[var(--ink-low)] block">CERTIFIED TECHNICIAN:</span>
+            <span id="modal-cert-engineer" class="text-[var(--ink-high)]">Marcus Vance_AGSC</span>
+          </div>
+        </div>
+
+        <div class="space-y-2 border-b border-[var(--structural-line)]/50 pb-3">
+          <span class="text-[9px] text-[var(--ink-low)] block">ADAS CAMERA CALIBRATION ALIGNMENT DATA:</span>
+          <div class="grid grid-cols-2 gap-2 text-[10px] text-emerald-400">
+            <div>&bull; LANE_KEEP_CAMERA: <span class="font-bold text-white">0.00° offset</span></div>
+            <div>&bull; COLLISION_RADAR: <span class="font-bold text-white">0.01° offset</span></div>
+            <div>&bull; RAIN_SENSOR_DIAG: <span class="font-bold text-white">ACTIVE & PASS</span></div>
+            <div>&bull; WINDSHIELD SEAL: <span class="font-bold text-white">PASS (OEM Standards)</span></div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-[var(--surface-raised)] border border-[var(--structural-line)] text-[9px] text-[var(--ink-low)] leading-relaxed">
+          THIS DIGITAL RECORD CERTIFIES THAT THE ADAS FORWARD-FACING CAMERA LENS HAS BEEN CALIBRATED AND ALIGNED ACCORDING TO VEHICLE MANUFACTURER SAFETY STANDARDS.
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end gap-3">
+        <button onclick="closeCertificateModal()" class="border border-[var(--structural-line)] px-4 py-2 hover:border-white transition-colors">Close Certificate</button>
+        <button onclick="alert('Downloading calibration certificate... Done.')" class="bg-[var(--laser-cyan)] text-[var(--canvas)] px-6 py-2 font-bold hover:bg-cyan-400 transition-colors">Download PDF Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/layout.js"></script>
+
+  <!-- DASHBOARD JAVASCRIPT FUNCTIONS -->
+  <script>
+    // Selected steps logs map
+    const stepLogs = {
+      1: {
+        status: 'STATUS: BOOKING_SCHEDULED',
+        logs: [
+          '[09:30:00] BOOKING: Service request confirmed in Kinetic scheduler.',
+          '[09:30:12] INSURANCE: Deductible verification cleared with insurance carrier.',
+          '[09:30:25] INVENTORY: OEM windshield and replacement molding allocated from warehouse.',
+          '[09:30:45] SYSTEM: Service van dispatched status locked for assigned route.'
+        ]
+      },
+      2: {
+        status: 'STATUS: TECHNICIAN EN ROUTE',
+        logs: [
+          '[17:24:12] GPS: Real-time tracking link established with Technician Van #4.',
+          '[17:24:15] GPS: Van currently traveling on central corridor (ETA: 14m).',
+          '[17:24:20] ADAS: System matching pre-loaded targets: TG-BMW-24 calibration.',
+          '[17:24:28] GPS: Route optimized, technician traveling at normal speeds.'
+        ]
+      },
+      3: {
+        status: 'STATUS: INSTALLATION_QUEUED',
+        logs: [
+          '[--:--:--] INSTALL: Windshield structural extraction setup.',
+          '[--:--:--] INSTALL: Clean vehicle workspace setup and safety wrap.',
+          '[--:--:--] INSTALL: Estimated installation time: ~45 minutes.',
+          '[--:--:--] INSTALL: Applying quick-cure polyurethane adhesive.'
+        ]
+      },
+      4: {
+        status: 'STATUS: CALIBRATION_QUEUED',
+        logs: [
+          '[--:--:--] CALIBRATION: Setting up camera target alignment boards.',
+          '[--:--:--] SAFETY: 45-minute Safe Drive-Away Time (SDAT) curing monitor.',
+          '[--:--:--] CALIBRATION: Generating digital ADAS safety calibration certificate.'
+        ]
+      }
+    };
+
+    function selectStep(stepNum) {
+      // Remove border from all buttons, reset to defaults
+      for(let i=1; i<=4; i++) {
+        const btn = document.getElementById('step-btn-' + i);
+        if (i === 2) {
+          // Keep active step highlighted differently but lower border width if not active
+          btn.className = "w-full text-left p-4 border border-[var(--laser-amber)] bg-[var(--surface-raised)] opacity-75 hover:bg-[var(--surface-metal)] transition-all rounded-none relative";
+        } else if (i < 2) {
+          btn.className = "w-full text-left p-4 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 opacity-75 transition-all rounded-none";
+        } else {
+          btn.className = "w-full text-left p-4 border border-[var(--structural-line)] bg-[var(--surface-solid)] hover:bg-[var(--surface-raised)] opacity-40 transition-all rounded-none";
+        }
+      }
+
+      // Add highlighted border to clicked button
+      const activeBtn = document.getElementById('step-btn-' + stepNum);
+      if (stepNum === 2) {
+        activeBtn.className = "w-full text-left p-4 border-2 border-[var(--laser-amber)] bg-[var(--surface-raised)] transition-all rounded-none relative";
+      } else if (stepNum < 2) {
+        activeBtn.className = "w-full text-left p-4 border-2 border-emerald-500 bg-emerald-500/10 transition-all rounded-none";
+      } else {
+        activeBtn.className = "w-full text-left p-4 border-2 border-[var(--laser-cyan)] bg-[var(--surface-metal)] opacity-100 transition-all rounded-none";
+      }
+
+      // Update terminal console log readout
+      document.getElementById('console-step-num').innerText = '0' + stepNum;
+      document.getElementById('console-step-status').innerText = stepLogs[stepNum].status;
+      
+      const logContainer = document.getElementById('console-log-readout');
+      logContainer.innerHTML = '';
+      stepLogs[stepNum].logs.forEach(log => {
+        const logLine = document.createElement('div');
+        logLine.innerText = log;
+        logContainer.appendChild(logLine);
+      });
+    }
+
+    // ETA Countdown Ticker
+    let countdownMinutes = 13;
+    let countdownSeconds = 48;
+    let countdownMs = 23;
+
+    const etaTicker = document.getElementById('eta-countdown-ticker');
+    const distanceTicker = document.getElementById('distance-gap-ticker');
+    const speedLog = document.getElementById('gps-speed-log');
+    const coordinatesLog = document.getElementById('gps-coordinates-log');
+
+    setInterval(() => {
+      // Decrement ms
+      countdownMs -= 37;
+      if (countdownMs < 0) {
+        countdownMs = 999;
+        countdownSeconds--;
+        if (countdownSeconds < 0) {
+          countdownSeconds = 59;
+          countdownMinutes--;
+          if (countdownMinutes < 0) {
+            countdownMinutes = 0;
+            countdownSeconds = 0;
+            countdownMs = 0;
+          }
+        }
+      }
+
+      // Format string
+      const minStr = countdownMinutes + 'm ';
+      const secStr = (countdownSeconds < 10 ? '0' + countdownSeconds : countdownSeconds) + 's ';
+      const msStr = (countdownMs < 100 ? (countdownMs < 10 ? '00' + countdownMs : '0' + countdownMs) : countdownMs) + 'ms';
+      
+      etaTicker.innerText = minStr + secStr + msStr;
+
+      // Slowly decrease distance gap based on countdown progress
+      const totalSeconds = countdownMinutes * 60 + countdownSeconds;
+      const currentDistance = (totalSeconds * 0.006 + (countdownMs / 1000) * 0.006).toFixed(2);
+      distanceTicker.innerText = currentDistance + ' km';
+
+      // Live GPS Coordinate Mock updates
+      if (countdownSeconds % 10 === 0 && countdownMs < 50) {
+        const mockLat = (13.1091 - (120 - totalSeconds) * 0.00004).toFixed(4);
+        const mockLon = (80.1124 + (120 - totalSeconds) * 0.00004).toFixed(4);
+        coordinatesLog.innerText = mockLat + '° N / ' + mockLon + '° E';
+        
+        // Randomly modify speed to simulate traffic
+        const speed = Math.floor(40 + Math.random() * 8);
+        speedLog.innerText = speed + ' km/h';
+      }
+    }, 37);
+
+    // Ping Technician Action
+    function pingTechnicianSignal() {
+      const terminal = document.getElementById('action-status-terminal');
+      terminal.classList.remove('hidden');
+      setTimeout(() => {
+        terminal.innerText = "> Message sent to technician... Success. [Response received: \"I'm en route, ETA matches tracking calculations\"]";
+      }, 1000);
+    }
+
+    // Modal Operations
+    function openCertificateModal(taskId, date, vehicle, engineer) {
+      document.getElementById('modal-cert-id').innerText = '#' + taskId;
+      document.getElementById('modal-cert-date').innerText = date;
+      document.getElementById('modal-cert-vehicle').innerText = vehicle;
+      document.getElementById('modal-cert-engineer').innerText = engineer + '_AGSC';
+      
+      document.getElementById('certificate-modal').classList.remove('hidden');
+    }
+
+    function closeCertificateModal() {
+      document.getElementById('certificate-modal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
